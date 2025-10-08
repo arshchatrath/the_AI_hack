@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { useEffect, useMemo, useRef, useState } from "react"
-import { Button } from "@/components/ui/button"
-import { DarkModeToggle } from "./dark-mode-toggle"
-import { Menu } from "lucide-react"
+import Link from "next/link";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { DarkModeToggle } from "./dark-mode-toggle";
+import { Menu } from "lucide-react";
 
 const LINKS = [
   { href: "#home", label: "Home" },
@@ -14,29 +14,29 @@ const LINKS = [
   { href: "#organizers", label: "Organizers" },
   { href: "#judges", label: "Judges" },
   { href: "#contact", label: "Contact" },
-]
+];
 
 export function NavBar() {
-  const [open, setOpen] = useState(false)
-  const [active, setActive] = useState("#home")
-  const linkRefs = useRef<Record<string, HTMLAnchorElement | null>>({})
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("#home");
+  const linkRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
 
-  const ids = useMemo(() => LINKS.map((l) => l.href.replace("#", "")), [])
+  const ids = useMemo(() => LINKS.map((l) => l.href.replace("#", "")), []);
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
-          if (e.isIntersecting) setActive(`#${e.target.id}`)
-        })
+          if (e.isIntersecting) setActive(`#${e.target.id}`);
+        });
       },
-      { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 },
-    )
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 }
+    );
     ids.forEach((id) => {
-      const el = document.getElementById(id)
-      if (el) observer.observe(el)
-    })
-    return () => observer.disconnect()
-  }, [ids])
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, [ids]);
 
   return (
     <header className="sticky top-0 z-50 border-b bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -62,8 +62,11 @@ export function NavBar() {
               />
             </a>
           ))}
-          <DarkModeToggle />
-          <Button asChild className="bg-brand text-primary-foreground hover:bg-brand/90">
+          {/* {<DarkModeToggle />} */}
+          <Button
+            asChild
+            className="bg-brand text-primary-foreground hover:bg-brand/90"
+          >
             <a href="#registration">Register</a>
           </Button>
         </div>
@@ -91,7 +94,10 @@ export function NavBar() {
             ))}
             <div className="flex items-center gap-3 pt-2">
               <DarkModeToggle />
-              <Button asChild className="bg-brand text-primary-foreground hover:bg-brand/90 w-full">
+              <Button
+                asChild
+                className="bg-brand text-primary-foreground hover:bg-brand/90 w-full"
+              >
                 <a href="#registration">Register</a>
               </Button>
             </div>
@@ -99,5 +105,5 @@ export function NavBar() {
         </div>
       )}
     </header>
-  )
+  );
 }
