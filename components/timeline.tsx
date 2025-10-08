@@ -1,91 +1,197 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
-import { Calendar, Users, Wrench, Presentation, Trophy, Clock } from "lucide-react"
+import { useState } from "react"
+import { Calendar, Users, Presentation, Trophy, Clock, Globe, MapPin } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 
-const EVENTS = [
-  { title: "Registration Opens", icon: Calendar },
-  { title: "Team Formation & Ideation", icon: Users },
-  { title: "Prototype Development Phase", icon: Wrench },
-  { title: "Final Presentations", icon: Presentation },
-  { title: "Winner Announcement", icon: Trophy },
+const INDIA_EVENTS = [
+  { 
+    title: "Mail for Floating Problem Statements to students", 
+    icon: Calendar, 
+    date: "06 October 2025",
+    description: "Problem statements will be shared with all registered students"
+  },
+  { 
+    title: "PPT Submission Deadline", 
+    icon: Presentation, 
+    date: "20 November 2025",
+    description: "Teams must submit their initial presentation and approach"
+  },
+  { 
+    title: "Shortlisting Phase I", 
+    icon: Users, 
+    date: "01 December 2025",
+    description: "First round of team selection based on submissions"
+  },
+  { 
+    title: "Online Pitching", 
+    icon: Presentation, 
+    date: "23 December 2025",
+    description: "Selected teams present their solutions online"
+  },
+  { 
+    title: "Results Announcement", 
+    icon: Trophy, 
+    date: "07 January 2026",
+    description: "Winners will be announced for both tracks"
+  },
+  { 
+    title: "AI Hands-On Workshop", 
+    icon: Users, 
+    date: "17 January 2026",
+    description: "Practical AI workshop for all participants"
+  },
+  { 
+    title: "Innovation Challenge", 
+    icon: Trophy, 
+    date: "17-18 January 2026",
+    description: "Final 24-hour hackathon event"
+  }
 ]
 
-const REG_DEADLINE = new Date(new Date().getFullYear(), 10, 15, 23, 59, 59) // Nov 15, 23:59:59 local (month 10 is Nov)
-
-function useCountdown(target: Date) {
-  const [now, setNow] = useState(() => new Date())
-  useEffect(() => {
-    const id = setInterval(() => setNow(new Date()), 1000)
-    return () => clearInterval(id)
-  }, [])
-  const ms = Math.max(0, target.getTime() - now.getTime())
-  const s = Math.floor(ms / 1000) % 60
-  const m = Math.floor(ms / (1000 * 60)) % 60
-  const h = Math.floor(ms / (1000 * 60 * 60)) % 24
-  const d = Math.floor(ms / (1000 * 60 * 60 * 24))
-  return { d, h, m, s }
-}
+const UQ_EVENTS = [
+  { 
+    title: "Mail for Floating Problem Statements to students", 
+    icon: Calendar, 
+    date: "06 October 2025",
+    description: "Problem statements will be shared with all registered students"
+  },
+  { 
+    title: "PPT Submission Deadline", 
+    icon: Presentation, 
+    date: "05 December 2025",
+    description: "Teams must submit their initial presentation and approach"
+  },
+  { 
+    title: "Shortlisting Phase I", 
+    icon: Users, 
+    date: "10 December 2025",
+    description: "First round of team selection based on submissions"
+  },
+  { 
+    title: "Online Pitching", 
+    icon: Presentation, 
+    date: "04 January 2026",
+    description: "Selected teams present their solutions online"
+  },
+  { 
+    title: "Results Announcement", 
+    icon: Trophy, 
+    date: "07 January 2026",
+    description: "Winners will be announced for both tracks"
+  },
+  { 
+    title: "AI Hands-On Workshop", 
+    icon: Users, 
+    date: "17 January 2026",
+    description: "Practical AI workshop for all participants"
+  },
+  { 
+    title: "Innovation Challenge", 
+    icon: Trophy, 
+    date: "17-18 January 2026",
+    description: "Final 24-hour hackathon event"
+  }
+]
 
 export function Timeline() {
-  const { d, h, m, s } = useCountdown(REG_DEADLINE)
-  const doneIndex = useMemo(() => 0, []) // placeholder progression if needed
+  const [selectedTrack, setSelectedTrack] = useState<'india' | 'uq'>('india')
+
+  const currentEvents = selectedTrack === 'india' ? INDIA_EVENTS : UQ_EVENTS
 
   return (
-    <div className="flex flex-col gap-8">
-      {/* Countdown */}
-      <div className="flex items-center gap-3">
-        <Clock className="h-5 w-5 text-brand" />
-        <p className="text-sm">Registration closes in</p>
-        <div className="flex items-center gap-2 font-mono">
-          <TimeBlock v={d} label="D" />
-          <TimeBlock v={h} label="H" />
-          <TimeBlock v={m} label="M" />
-          <TimeBlock v={s} label="S" />
+    <div className="space-y-8">
+      {/* Track Selector */}
+      <div className="flex flex-col items-center gap-6">
+        <div className="text-center">
+          <h3 className="text-2xl font-bold mb-2">Event Timeline</h3>
+          <p className="text-muted-foreground">
+            Select your region to view the specific timeline for your participation
+          </p>
         </div>
-        <Badge className="bg-warm-1 text-foreground ml-auto">Don’t miss out</Badge>
+        
+        <div className="flex gap-4">
+          <Button
+            variant={selectedTrack === 'india' ? 'default' : 'outline'}
+            onClick={() => setSelectedTrack('india')}
+            className="flex items-center gap-2"
+          >
+            <MapPin className="h-4 w-4" />
+            India (TIET)
+          </Button>
+          <Button
+            variant={selectedTrack === 'uq' ? 'default' : 'outline'}
+            onClick={() => setSelectedTrack('uq')}
+            className="flex items-center gap-2"
+          >
+            <Globe className="h-4 w-4" />
+            Australia (UQ)
+          </Button>
+        </div>
       </div>
 
-      {/* Timeline */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-        {EVENTS.map((e, i) => {
-          const ActiveIcon = e.icon
-          const active = i <= doneIndex
-          return (
-            <div key={e.title} className="relative p-4 rounded-md border bg-card">
-              <div className="flex items-center gap-3">
-                <span
-                  className={`h-10 w-10 grid place-items-center rounded-full border ${active ? "bg-brand text-primary-foreground" : "bg-secondary/40"}`}
-                >
-                  <ActiveIcon className="h-5 w-5" />
-                </span>
-                <div className="font-medium">{e.title}</div>
-              </div>
-              <div className="mt-3 h-1 rounded bg-secondary/50 overflow-hidden">
-                <div className={`h-full transition-all ${active ? "w-full bg-brand" : "w-0"}`} />
-              </div>
-              {/* connector line on desktop */}
-              {i < EVENTS.length - 1 && (
-                <div
-                  className="hidden md:block absolute right-[-12px] top-1/2 -translate-y-1/2 w-6 h-0.5 bg-border"
-                  aria-hidden
-                />
+      {/* Timeline Display */}
+      <div className="max-w-4xl mx-auto">
+        <Card className="border-blue-200">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              {selectedTrack === 'india' ? (
+                <>
+                  <MapPin className="h-5 w-5 text-blue-600" />
+                  Timeline for India (TIET Students)
+                </>
+              ) : (
+                <>
+                  <Globe className="h-5 w-5 text-blue-600" />
+                  Timeline for Australia (UQ Students)
+                </>
               )}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-6">
+              {currentEvents.map((event, index) => {
+                const IconComponent = event.icon
+                const isCompleted = false // You can add logic to determine if event is completed
+                const isCurrent = index === 0 // You can add logic to determine current event
+                
+                return (
+                  <div key={index} className="relative flex gap-4">
+                    {/* Timeline Line */}
+                    {index < currentEvents.length - 1 && (
+                      <div className="absolute left-6 top-12 w-0.5 h-16 bg-blue-200" />
+                    )}
+                    
+                    {/* Icon */}
+                    <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center border-2 ${
+                      isCompleted 
+                        ? 'bg-green-100 border-green-500 text-green-600'
+                        : isCurrent
+                        ? 'bg-blue-100 border-blue-500 text-blue-600'
+                        : 'bg-gray-100 border-gray-300 text-gray-500'
+                    }`}>
+                      <IconComponent className="h-5 w-5" />
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="flex-1 pb-8">
+                      <div className="flex items-center gap-3 mb-2">
+                        <h4 className="font-semibold text-lg">{event.title}</h4>
+                        <Badge variant={isCurrent ? 'default' : 'secondary'} className="text-xs">
+                          {event.date}
+                        </Badge>
+                      </div>
+                      <p className="text-muted-foreground text-sm">{event.description}</p>
+                    </div>
+                  </div>
+                )
+              })}
             </div>
-          )
-        })}
-      </div>
-    </div>
-  )
-}
-
-function TimeBlock({ v, label }: { v: number; label: string }) {
-  const val = v.toString().padStart(2, "0")
-  return (
-    <div className="grid grid-rows-[auto_auto] text-center">
-      <div className="px-2 py-1 rounded bg-secondary/50 font-bold tracking-wider">{val}</div>
-      <span className="text-[10px] text-muted-foreground mt-1">{label}</span>
+          </CardContent>
+        </Card>
+      </div>      
     </div>
   )
 }

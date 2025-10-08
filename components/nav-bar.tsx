@@ -3,17 +3,18 @@
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { DarkModeToggle } from "./dark-mode-toggle";
+
 import { Menu } from "lucide-react";
 
 const LINKS = [
   { href: "#home", label: "Home" },
   { href: "#problems", label: "Problem Statements" },
   { href: "#timeline", label: "Timeline" },
+  { href: "#prizes", label: "Prizes" },
   { href: "#registration", label: "Registration" },
   { href: "#organizers", label: "Organizers" },
   { href: "#judges", label: "Judges" },
-  { href: "#contact", label: "Contact" },
+  { href: "#contact", label: "Contact & FAQ" },
 ];
 
 export function NavBar() {
@@ -42,8 +43,8 @@ export function NavBar() {
     <header className="sticky top-0 z-50 border-b bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="#home" className="flex items-center gap-2 font-semibold">
-          <span className="h-6 w-6 rounded-sm bg-brand" aria-hidden />
-          <span>AI for Inclusion</span>
+          <span className="h-6 w-6 rounded-sm bg-gradient-to-r from-blue-500 to-cyan-500" aria-hidden />
+          <span>Comp Name</span>
         </Link>
         <div className="hidden md:flex items-center gap-6">
           {LINKS.map((l) => (
@@ -93,7 +94,6 @@ export function NavBar() {
               </a>
             ))}
             <div className="flex items-center gap-3 pt-2">
-              <DarkModeToggle />
               <Button
                 asChild
                 className="bg-brand text-primary-foreground hover:bg-brand/90 w-full"

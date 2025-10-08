@@ -19,12 +19,12 @@ type Form = {
 };
 
 const TRACKS = [
-  "Financial Literacy (Rural)",
-  "Multilingual Accessibility",
-  "AI Tutors (Schools)",
-  "Bias-Free Recruitment",
-  "Energy Saving",
-  "Open Challenge",
+  "AI for Healthcare & Wellness",
+  "Smart Agriculture & Food Security",
+  "Education & Skill Development",
+  "Financial Inclusion & Fintech",
+  "Governance & Public Services",
+  "Open Innovation Track",
 ];
 
 export function Registration() {

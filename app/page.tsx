@@ -2,7 +2,8 @@ import { NavBar } from "@/components/nav-bar";
 import { Hero } from "@/components/hero";
 import { ProblemStatements } from "@/components/problem-statements";
 import { Timeline } from "@/components/timeline";
-import { Registration } from "@/components/registration";
+import { RegistrationForm } from "@/components/registration-form";
+import { Prizes } from "@/components/prizes";
 import { PeopleGrid } from "@/components/people-grid";
 import { ContactSection } from "@/components/contact-section";
 import { EventHighlights } from "@/components/EventHighLights";
@@ -45,18 +46,33 @@ export default function Page() {
         </div>
       </section>
       <section
-        id="registration"
-        aria-labelledby="registration-title"
+        id="prizes"
+        aria-labelledby="prizes-title"
         className="py-16 md:py-24 bg-secondary/10"
       >
         <div className="container mx-auto px-4">
           <h2
+            id="prizes-title"
+            className="text-3xl md:text-4xl font-semibold text-pretty mb-8 text-center"
+          >
+            Prizes & Recognition
+          </h2>
+          <Prizes />
+        </div>
+      </section>
+      <section
+        id="registration"
+        aria-labelledby="registration-title"
+        className="py-16 md:py-24"
+      >
+        <div className="container mx-auto px-4">
+          <h2
             id="registration-title"
-            className="text-3xl md:text-4xl font-semibold text-pretty mb-8"
+            className="text-3xl md:text-4xl font-semibold text-pretty mb-8 text-center"
           >
             Registration
           </h2>
-          <Registration />
+          <RegistrationForm />
         </div>
       </section>
       <section

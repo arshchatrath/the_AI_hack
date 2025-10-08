@@ -4,10 +4,14 @@ import React from "react";
 
 export function EventHighlights() {
   const items = [
-    "6 Innovation Tracks",
-    "₹1,00,000 Prize Pool",
-    "Global Participation Welcome",
-    "Focus on Rural & Accessibility Solutions",
+    "6 Problem Tracks Available",
+    "₹1,75,000 Total Prize Pool",
+    "Hybrid Participation",
+    "Focus on AI for Social Impact",
+    "48-Hour Intensive Hackathon",
+    "Industry Expert Mentorship",
+    "TIET & UQ Partnership",
+    "Real-world Problem Solving",
   ];
   // Duplicate list for seamless marquee
   const list = [...items, ...items, ...items];
