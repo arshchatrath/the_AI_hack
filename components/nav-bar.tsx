@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 
 const LINKS = [
-  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
   { href: "#problems", label: "Problem Statements" },
   { href: "#timeline", label: "Timeline" },
   { href: "#prizes", label: "Prizes" },
@@ -44,7 +44,7 @@ export function NavBar() {
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="#home" className="flex items-center gap-2 font-semibold">
           <span className="h-6 w-6 rounded-sm bg-gradient-to-r from-blue-500 to-cyan-500" aria-hidden />
-          <span>Comp Name</span>
+          <span>AI for Inclusion</span>
         </Link>
         <div className="hidden md:flex items-center gap-6">
           {LINKS.map((l) => (

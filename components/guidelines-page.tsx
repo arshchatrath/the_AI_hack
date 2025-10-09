@@ -64,7 +64,7 @@ export function GuidelinesPage() {
                 </div>
                 <div className="text-center p-4 bg-blue-50 rounded-lg">
                   <Users className="h-6 w-6 text-blue-600 mx-auto mb-2" />
-                  <div className="font-semibold">1-5 Members</div>
+                  <div className="font-semibold">2-5 Members</div>
                   <div className="text-sm text-muted-foreground">Team Size</div>
                 </div>
                 <div className="text-center p-4 bg-blue-50 rounded-lg">
@@ -112,7 +112,7 @@ export function GuidelinesPage() {
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start gap-2">
                       <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />
-                      <span>Teams of 1-5 members</span>
+                      <span>Teams of 2-5 members</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle className="h-4 w-4 text-green-500 mt-0.5" />

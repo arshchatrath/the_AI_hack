@@ -173,7 +173,7 @@ const ITEMS: Item[] = [
     ],
     impact: "Address any critical societal challenge",
     difficulty: "Beginner",
-    teamSize: "1-5 members"
+    teamSize: "2-5 members"
   },
 ]
 
@@ -193,7 +193,6 @@ export function ProblemStatements() {
     <div className="space-y-8">
       {/* Overview Section */}
       <div className="text-center max-w-3xl mx-auto mb-12">
-        <h3 className="text-2xl font-bold mb-4">Choose Your Innovation Track</h3>
         <p className="text-muted-foreground text-lg">
           Select a problem statement that aligns with your passion and expertise. Each track offers unique challenges and opportunities to create meaningful impact.
         </p>

@@ -29,7 +29,7 @@ export function RegistrationForm() {
           <CardContent className="space-y-6">
             <div className="flex items-center gap-3">
               <Users className="h-5 w-5 text-blue-500" />
-              <span>Teams of 1-5 members</span>
+              <span>Teams of 2-5 members</span>
             </div>
             <div className="flex items-center gap-3">
               <Calendar className="h-5 w-5 text-blue-500" />

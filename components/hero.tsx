@@ -16,31 +16,29 @@ export function Hero() {
               {/* Institutional Header */}
               <div className="mb-8 text-center lg:text-left w-full">
                 <h2 className="text-2xl md:text-3xl font-semibold text-[#00BFA5] mb-2">
-                  Center of Excellence in Data Science & AI
+                  TIET-UQ Center of Excellence in Data Science & AI
                 </h2>
                 <h3 className="text-xl md:text-2xl font-semibold mb-2">
                   Thapar Institute of Engineering and Technology, Patiala
                 </h3>
-                <p className="text-base text-muted-foreground mb-2">
-                  in association with
-                </p>
-                <h3 className="text-xl md:text-2xl font-semibold mb-2">
-                  University of Queensland, Australia
-                </h3>
-                <p className="text-lg font-semibold mb-4">
+                <p className="text-lg font-semibold mb-2">
                   Presents
                 </p>
               </div>
 
               {/* Main Title */}
               <h1 className="text-4xl md:text-6xl lg:text-6xl font-extrabold text-pretty leading-tight text-[#3F51B5] mb-2">
-                AI for Inclusion<br />
-                Innovation Challenge 2026
+                Innovation Challenge 2026<br />
+                AI for Inclusion
               </h1>
 
               {/* Description */}
               <p className="mt-2 text-xl md:text-2xl text-muted-foreground font-medium max-w-2xl text-center lg:text-left">
                 Building bias-free AI solutions for an inclusive tomorrow.
+              </p>
+              
+              <p className="mt-4 text-lg text-muted-foreground font-medium max-w-2xl text-center lg:text-left">
+                The AI Impact Summit follows three guiding Sutras to harness AI for good. Its mission is to serve the Planet, empower People, and drive global Progress.
               </p>
 
               {/* Action Buttons */}
@@ -53,9 +51,9 @@ export function Hero() {
                 <Button
                   variant="outline"
                   className="text-base px-6 py-6 rounded-lg border-muted-foreground/30"
-                  asChild
+                  onClick={() => window.open('https://impact.indiaai.gov.in/themes', '_blank')}
                 >
-                  <a href="#guidelines">View Guidelines</a>
+                  View Guidelines
                 </Button>
               </div>
 

@@ -157,7 +157,7 @@ export function Registration() {
                 </summary>
                 <ul className="mt-2 list-disc pl-5 text-sm text-muted-foreground">
                   <li>Students and professionals worldwide</li>
-                  <li>Teams of 1-5 participants</li>
+                  <li>Teams of 2-5 participants</li>
                   <li>Project submissions before the deadline</li>
                 </ul>
               </details>

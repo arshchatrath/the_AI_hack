@@ -28,7 +28,7 @@ const faqs = [
   {
     question: "What is the team size limit?",
     answer:
-      "Teams can have 1-5 members. You can participate individually or form a team with up to 4 other members.",
+      "Teams must have 2-5 members. You need to form a team with at least one other member and can have up to 4 other members.",
   },
   {
     question: "Who can participate in the IndiaAI Impact Hackathon?",

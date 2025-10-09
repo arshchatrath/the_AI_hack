@@ -8,12 +8,6 @@ import { Button } from "@/components/ui/button"
 
 const INDIA_EVENTS = [
   { 
-    title: "Mail for Floating Problem Statements to students", 
-    icon: Calendar, 
-    date: "06 October 2025",
-    description: "Problem statements will be shared with all registered students"
-  },
-  { 
     title: "PPT Submission Deadline", 
     icon: Presentation, 
     date: "20 November 2025",
@@ -52,12 +46,6 @@ const INDIA_EVENTS = [
 ]
 
 const UQ_EVENTS = [
-  { 
-    title: "Mail for Floating Problem Statements to students", 
-    icon: Calendar, 
-    date: "06 October 2025",
-    description: "Problem statements will be shared with all registered students"
-  },
   { 
     title: "PPT Submission Deadline", 
     icon: Presentation, 
@@ -151,43 +139,43 @@ export function Timeline() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-6">
-              {currentEvents.map((event, index) => {
-                const IconComponent = event.icon
-                const isCompleted = false // You can add logic to determine if event is completed
-                const isCurrent = index === 0 // You can add logic to determine current event
-                
-                return (
-                  <div key={index} className="relative flex gap-4">
-                    {/* Timeline Line */}
-                    {index < currentEvents.length - 1 && (
-                      <div className="absolute left-6 top-12 w-0.5 h-16 bg-blue-200" />
-                    )}
-                    
-                    {/* Icon */}
-                    <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center border-2 ${
-                      isCompleted 
-                        ? 'bg-green-100 border-green-500 text-green-600'
-                        : isCurrent
-                        ? 'bg-blue-100 border-blue-500 text-blue-600'
-                        : 'bg-gray-100 border-gray-300 text-gray-500'
-                    }`}>
-                      <IconComponent className="h-5 w-5" />
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="flex-1 pb-8">
-                      <div className="flex items-center gap-3 mb-2">
-                        <h4 className="font-semibold text-lg">{event.title}</h4>
-                        <Badge variant={isCurrent ? 'default' : 'secondary'} className="text-xs">
+            <div className="overflow-x-auto">
+              <div className="flex gap-8 min-w-max pb-4">
+                {currentEvents.map((event, index) => {
+                  const IconComponent = event.icon
+                  const isCompleted = false // You can add logic to determine if event is completed
+                  const isCurrent = index === 0 // You can add logic to determine current event
+                  
+                  return (
+                    <div key={index} className="relative flex flex-col items-center min-w-[200px]">
+                      {/* Timeline Line */}
+                      {index < currentEvents.length - 1 && (
+                        <div className="absolute top-6 left-[calc(100%-16px)] w-8 h-0.5 bg-blue-200 z-0" />
+                      )}
+                      
+                      {/* Icon */}
+                      <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center border-2 z-10 ${
+                        isCompleted 
+                          ? 'bg-green-100 border-green-500 text-green-600'
+                          : isCurrent
+                          ? 'bg-blue-100 border-blue-500 text-blue-600'
+                          : 'bg-gray-100 border-gray-300 text-gray-500'
+                      }`}>
+                        <IconComponent className="h-5 w-5" />
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="text-center mt-4 max-w-[180px]">
+                        <Badge variant={isCurrent ? 'default' : 'secondary'} className="text-xs mb-2">
                           {event.date}
                         </Badge>
+                        <h4 className="font-semibold text-sm mb-2 leading-tight">{event.title}</h4>
+                        <p className="text-muted-foreground text-xs leading-relaxed">{event.description}</p>
                       </div>
-                      <p className="text-muted-foreground text-sm">{event.description}</p>
                     </div>
-                  </div>
-                )
-              })}
+                  )
+                })}
+              </div>
             </div>
           </CardContent>
         </Card>
