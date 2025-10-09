@@ -10,25 +10,25 @@
 2. Find the line with `GOOGLE_FORM_URL: ""`
 3. Replace the empty string with your Google Form URL:
 
-```typescript
+\`\`\`typescript
 export const HACKATHON_CONFIG = {
   // Registration
   GOOGLE_FORM_URL: "https://forms.google.com/your-actual-form-url-here",
   // ... rest of config
 };
-```
+\`\`\`
 
 ### 2. Update Event Dates
 
 In the same `lib/config.ts` file, update the TBD dates:
 
-```typescript
+\`\`\`typescript
 // Dates (Update these when finalized)
 REGISTRATION_OPENS: "March 1, 2025",
 REGISTRATION_CLOSES: "March 15, 2025", 
 HACKATHON_START: "March 20, 2025",
 HACKATHON_END: "March 22, 2025",
-```
+\`\`\`
 
 ### 3. Add IndiaAI Logo (Optional)
 
@@ -53,9 +53,9 @@ Edit `components/people-grid.tsx` to add:
 ## Testing Your Changes
 
 1. Run the development server:
-```bash
+\`\`\`bash
 npm run dev
-```
+\`\`\`
 
 2. Open http://localhost:3000
 
@@ -83,14 +83,14 @@ npm run dev
 
 ## File Structure for Easy Updates
 
-```
+\`\`\`
 lib/config.ts              ← Main configuration (MOST IMPORTANT)
 components/hero.tsx         ← Hero section with branding
 components/registration-form.tsx ← Registration with Google Form
 components/prizes.tsx       ← Prize structure
 components/people-grid.tsx  ← Organizers & judges
 components/contact-section.tsx ← Contact information
-```
+\`\`\`
 
 ## Need Help?
 
