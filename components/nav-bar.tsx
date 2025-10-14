@@ -5,12 +5,14 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { DarkModeToggle } from "./dark-mode-toggle";
 import { Menu } from "lucide-react";
+import Image from "next/image";
 
 const LINKS = [
   { href: "#home", label: "Home" },
   { href: "#problems", label: "Problem Statements" },
   { href: "#timeline", label: "Timeline" },
   { href: "#registration", label: "Registration" },
+  { href: "#guidelines", label: "Guidelines" }, // Added Guidelines section
   { href: "#organizers", label: "Organizers" },
   { href: "#judges", label: "Judges" },
   { href: "#contact", label: "Contact" },
@@ -42,8 +44,13 @@ export function NavBar() {
     <header className="sticky top-0 z-50 border-b bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="#home" className="flex items-center gap-2 font-semibold">
-          <span className="h-6 w-6 rounded-sm bg-brand" aria-hidden />
-          <span>AI for Inclusion</span>
+          <Image
+            src="/logo.png"
+            alt="IndiaAI Logo"
+            width={100}
+            height={36}
+            priority
+          />
         </Link>
         <div className="hidden md:flex items-center gap-6">
           {LINKS.map((l) => (

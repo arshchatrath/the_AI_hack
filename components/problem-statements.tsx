@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import {
   Smartphone,
   IndianRupee,
@@ -15,14 +15,14 @@ import {
   CircuitBoard,
   Lightbulb,
   Share2,
-} from "lucide-react"
+} from "lucide-react";
 
 type Item = {
-  title: string
-  desc: string
-  icon: React.ReactNode
-  tags: string[]
-}
+  title: string;
+  desc: string;
+  icon: React.ReactNode;
+  tags: string[];
+};
 
 const ITEMS: Item[] = [
   {
@@ -81,24 +81,30 @@ const ITEMS: Item[] = [
     ),
     tags: ["Open", "Innovation"],
   },
-]
+];
 
 export function ProblemStatements() {
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
       {ITEMS.map((it, idx) => (
         <div key={idx} className="group perspective relative">
           <Card className="card-3d relative p-5 bg-card/90 border-foreground/10">
             {/* front */}
             <div className="card-face flex flex-col h-full justify-between">
-              <div className="flex items-center gap-2 text-brand">{it.icon}</div>
+              <div className="flex items-center gap-2 text-brand">
+                {it.icon}
+              </div>
               <div className="mt-4">
                 <h3 className="text-xl font-semibold">{it.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{it.desc}</p>
               </div>
               <div className="mt-4 flex flex-wrap gap-2">
                 {it.tags.map((t) => (
-                  <Badge key={t} variant="outline" className="border-brand text-brand">
+                  <Badge
+                    key={t}
+                    variant="outline"
+                    className="border-brand text-brand"
+                  >
                     {t}
                   </Badge>
                 ))}
@@ -107,7 +113,8 @@ export function ProblemStatements() {
             {/* back */}
             <div className="card-back absolute inset-0 card-face p-5 flex flex-col justify-center bg-secondary/30 border">
               <p className="text-sm">
-                Build with responsibility. Ensure data privacy, fairness, and accessibility are core to your solution.
+                Build with responsibility. Ensure data privacy, fairness, and
+                accessibility are core to your solution.
               </p>
               <p className="text-xs text-muted-foreground mt-2">
                 Tip: Highlight real-world users and measurable impact.
@@ -117,5 +124,5 @@ export function ProblemStatements() {
         </div>
       ))}
     </div>
-  )
+  );
 }

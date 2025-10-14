@@ -8,6 +8,7 @@ export function EventHighlights() {
     "₹1,00,000 Prize Pool",
     "Global Participation Welcome",
     "Focus on Rural & Accessibility Solutions",
+    "24+ Hour Hackathon",
   ];
   // Duplicate list for seamless marquee
   const list = [...items, ...items, ...items];

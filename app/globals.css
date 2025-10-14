@@ -5,7 +5,7 @@
 
 :root {
   /* Brand palette */
-  --brand-primary: #20b8cd; /* True Turquoise */
+  --brand-primary: #ff6a1a; /* Orange from logo */
   --brand-deep: #13343b; /* Deep Tech Blue (darker) */
   --brand-deep-2: #218090; /* Deep Tech Blue (mid) */
   --brand-accent: #badfde; /* Light Turquoise */
@@ -186,4 +186,32 @@ html {
   100% {
     transform: translateX(-50%);
   }
+}
+
+/* Update blue utility classes for badges, etc. */
+.bg-blue-100,
+.bg-blue-100\/80 {
+  background-color: #ffe3cc !important;
+}
+.bg-blue-400 {
+  background-color: #ff6a1a !important;
+}
+.text-blue-800 {
+  color: #a94b30 !important;
+}
+.border-blue-200 {
+  border-color: #ffd2a6 !important;
+}
+
+/* Ensure orange (brand) buttons have white text */
+.bg-brand,
+.bg-[#ff6a1a],
+.bg-orange-500,
+.bg-[--brand-primary] {
+  color: #fff !important;
+}
+
+/* If you use Tailwind's .text-primary-foreground for button text: */
+.text-primary-foreground {
+  color: #fff !important;
 }
