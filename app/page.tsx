@@ -16,7 +16,10 @@ export default function Page() {
     <main className="min-h-[100dvh]">
       <NavBar />
       <Hero />
-      <EventHighlights />
+      <div className="w-full">
+        <EventHighlights />
+      </div>
+      <About />
       <section
         id="problems"
         aria-labelledby="problems-title"
