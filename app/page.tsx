@@ -1,9 +1,12 @@
 import { NavBar } from "@/components/nav-bar";
 import { Hero } from "@/components/hero";
+import { About } from "@/components/about";
 import { ProblemStatements } from "@/components/problem-statements";
 import { Timeline } from "@/components/timeline";
-import { Registration } from "@/components/registration";
-import { PeopleGrid } from "@/components/people-grid";
+import { RegistrationForm } from "@/components/registration-form";
+import { Prizes } from "@/components/prizes";
+import { Organizers } from "@/components/organizers";
+import { Judges } from "@/components/judges";
 import { ContactSection } from "@/components/contact-section";
 import { ViewGuidelines } from "@/components/view-guidelines";
 import { EventHighlights } from "@/components/EventHighLights";
@@ -13,7 +16,10 @@ export default function Page() {
     <main className="min-h-[100dvh]">
       <NavBar />
       <Hero />
-      <EventHighlights />
+      <div className="w-full">
+        <EventHighlights />
+      </div>
+      <About />
       <section
         id="problems"
         aria-labelledby="problems-title"
@@ -45,18 +51,33 @@ export default function Page() {
         </div>
       </section>
       <section
-        id="registration"
-        aria-labelledby="registration-title"
+        id="prizes"
+        aria-labelledby="prizes-title"
         className="py-16 md:py-24 bg-secondary/10"
       >
         <div className="container mx-auto px-4">
           <h2
+            id="prizes-title"
+            className="text-3xl md:text-4xl font-semibold text-pretty mb-8 text-center"
+          >
+            Prizes & Recognition
+          </h2>
+          <Prizes />
+        </div>
+      </section>
+      <section
+        id="registration"
+        aria-labelledby="registration-title"
+        className="py-16 md:py-24"
+      >
+        <div className="container mx-auto px-4">
+          <h2
             id="registration-title"
-            className="text-3xl md:text-4xl font-semibold text-pretty mb-8"
+            className="text-3xl md:text-4xl font-semibold text-pretty mb-8 text-center"
           >
             Registration
           </h2>
-          <Registration />
+          <RegistrationForm />
         </div>
       </section>
       <section
@@ -80,13 +101,7 @@ export default function Page() {
         className="py-16 md:py-24"
       >
         <div className="container mx-auto px-4">
-          <h2
-            id="organizers-title"
-            className="text-3xl md:text-4xl font-semibold text-pretty mb-8"
-          >
-            Organizers
-          </h2>
-          <PeopleGrid variant="organizers" />
+          <Organizers />
         </div>
       </section>
       {/* <section
@@ -95,13 +110,7 @@ export default function Page() {
         className="py-16 md:py-24 bg-secondary/10"
       >
         <div className="container mx-auto px-4">
-          <h2
-            id="judges-title"
-            className="text-3xl md:text-4xl font-semibold text-pretty mb-8"
-          >
-            Judges
-          </h2>
-          <PeopleGrid variant="judges" />
+          <Judges />
         </div>
       </section> */}
       <ContactSection />
