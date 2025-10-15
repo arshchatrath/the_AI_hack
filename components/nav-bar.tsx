@@ -50,7 +50,7 @@ export function NavBar() {
             width={200}
             height={136}
             priority
-            className="bg-amber-500 rounded-lg px-6 py-2"
+            className="bg-[#ff6a1a] rounded-lg px-6 py-2"
           />
         </Link>
         <div className="hidden md:flex items-center gap-6">

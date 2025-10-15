@@ -177,25 +177,6 @@ export function PeopleGrid({ variant }: { variant: "organizers" | "judges" }) {
           </Card>
         ))}
       </div>
-      {variant === "organizers" && (
-        <div className="flex items-center gap-4">
-          <img
-            src="/placeholder-logo.svg"
-            alt="Institution logo"
-            className="h-8 w-auto opacity-80"
-          />
-          <img
-            src="/placeholder-logo.svg"
-            alt="Institution logo"
-            className="h-8 w-auto opacity-80"
-          />
-          <img
-            src="/placeholder-logo.svg"
-            alt="Institution logo"
-            className="h-8 w-auto opacity-80"
-          />
-        </div>
-      )}
     </div>
   );
 }
