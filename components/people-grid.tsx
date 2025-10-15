@@ -15,22 +15,34 @@ type Person = {
 
 const ORGS: Person[] = [
   {
-    name: "Dr. Anju Bala",
-    title: "Associate Professor",
-
-    img: "/anju_bala_mam.png",
-  },
-  {
     name: "Dr. Inderveer Chana",
-    title: "Professor and Associate Head",
+    title: "Center Director | Professor and Associate Head",
 
     img: "/dr_channaM.png",
   },
   {
-    name: "Dr. Amrita Kaur",
-    title: "Assistant Professor",
+    name: "Dr. Tim Miller",
+    title: "Center Director | Professor",
 
-    img: "/harpreet_mam.jpg",
+    img: "/tim.png",
+  },
+  {
+    name: "Dr. Maninder Singh",
+    title: "Professor",
+
+    img: "/manminder.jpg",
+  },
+  {
+    name: "Dr. Anju Bala",
+    title: "Education and Training Coordinator | Associate Professor",
+
+    img: "/anju_bala_mam.png",
+  },
+  {
+    name: "Dr. Sachin Kansal",
+    title: "Research and Innovation Coordinator | Assistant Professor",
+
+    img: "/sachin_sir.jpg",
   },
   {
     name: "Dr. Harpreet Singh",
@@ -38,23 +50,19 @@ const ORGS: Person[] = [
 
     img: "/harpreet_sir.jpeg",
   },
+
+  {
+    name: "Dr. Amrita Kaur",
+    title: "Assistant Professor",
+
+    img: "/harpreet_mam.jpg",
+  },
+
   {
     name: "Dr. Maggi Bansal",
     title: "Community Lead",
 
     img: "/maggi.jpeg",
-  },
-  {
-    name: "Dr. Sachin Kansal",
-    title: "Assistant Professor",
-
-    img: "/sachin_sir.jpg",
-  },
-  {
-    name: "Dr. Tim Miller",
-    title: "Professor",
-
-    img: "/tim.png",
   },
 ];
 

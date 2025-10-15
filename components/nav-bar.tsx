@@ -45,11 +45,12 @@ export function NavBar() {
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="#home" className="flex items-center gap-2 font-semibold">
           <Image
-            src="/logo.png"
+            src="/coe-logo.png"
             alt="IndiaAI Logo"
-            width={100}
-            height={36}
+            width={200}
+            height={136}
             priority
+            className="bg-amber-500 rounded-lg px-6 py-2"
           />
         </Link>
         <div className="hidden md:flex items-center gap-6">

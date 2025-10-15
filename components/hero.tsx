@@ -19,6 +19,9 @@ export function Hero() {
           <h1 className="text-5xl md:text-7xl font-extrabold text-pretty leading-tight text-foreground drop-shadow-sm">
             Innovation Challenge 2026
           </h1>
+          <h1 className="text-xl md:text-7xl text-pretty text-foreground drop-shadow-sm">
+            SabkaAI: AI for Inclusion
+          </h1>
 
           <p className="mt-6 text-xl text-muted-foreground font-medium">
             The Innovation Challenge, part of the IndiaAI Impact Summit,
