@@ -30,7 +30,7 @@ const ORGS: Person[] = [
     name: "Dr. Maninder Singh",
     title: "Professor",
 
-    img: "/manminder.jpg",
+    img: "/manminder (2).jpg",
   },
   {
     name: "Dr. Anju Bala",
@@ -55,7 +55,7 @@ const ORGS: Person[] = [
     name: "Dr. Amrita Kaur",
     title: "Assistant Professor",
 
-    img: "/harpreet_mam.jpg",
+    img: "/harpreet_mam (1).jpg",
   },
 
   {
