@@ -37,6 +37,7 @@ export function Registration() {
     agree: false,
   });
   const [touched, setTouched] = useState<Record<string, boolean>>({});
+  const [closed, setClosed] = useState(false); // Toggle for registration state
 
   const steps = [
     { title: "Basic Info" },
@@ -66,9 +67,45 @@ export function Registration() {
   const canNext = errors.length === 0;
 
   return (
-    <div className="w-full h-full flex justify-center items-center  py-16 px-0 bg-background">
-      <div className="w-full bg-card rounded-none shadow-xl p-0 md:p-0 border-0 space-y-8">
-        <div className="max-w-3xl mx-auto p-8 md:p-12">
+    <div className="w-full h-full flex flex-col items-center py-16 px-0 bg-background relative">
+      {/* Toggle Button for Demo */}
+      <div className="mb-6 flex justify-center w-full">
+        <Button
+          variant={closed ? "outline" : "default"}
+          className={cn(
+            "transition-all",
+            closed
+              ? "border border-gray-400 bg-gray-100 text-gray-700"
+              : "bg-brand text-white"
+          )}
+          onClick={() => setClosed((v) => !v)}
+        >
+          {closed
+            ? "Switch to Registration Open"
+            : "Switch to Registration Closed"}
+        </Button>
+      </div>
+      <div className="w-full bg-card rounded-none p-0 md:p-0 border-0 space-y-8 relative">
+        {/* Overlay for closed state */}
+        {closed && (
+          <div className="absolute inset-0 z-20 bg-gray-200/80 flex flex-col items-center justify-center rounded-none">
+            <div className="text-3xl font-bold text-gray-500 mb-4">
+              Registration Closed
+            </div>
+            <div className="text-lg text-gray-500 mb-2">
+              Thank you for your interest!
+            </div>
+            <div className="text-base text-gray-400">
+              Please check back for future events.
+            </div>
+          </div>
+        )}
+        <div
+          className={cn(
+            "max-w-3xl mx-auto p-8 md:p-12 transition-all duration-300",
+            closed && "pointer-events-none opacity-50 select-none"
+          )}
+        >
           <div className="flex items-center justify-between mb-4">
             <div className="text-lg font-semibold">{steps[step].title}</div>
             <div className="text-xs text-muted-foreground">

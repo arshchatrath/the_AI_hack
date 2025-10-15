@@ -1,16 +1,9 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog"
+import type React from "react";
+
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import {
   Heart,
   Sprout,
@@ -18,23 +11,15 @@ import {
   CreditCard,
   Building2,
   Lightbulb,
-  ChevronRight,
-  TrendingUp,
-} from "lucide-react"
+  Share2,
+} from "lucide-react";
 
 type Item = {
-  id: string
-  title: string
-  desc: string
-  detailedDesc: string
-  icon: React.ReactNode
-  tags: string[]
-  examples: string[]
-  impact: string
-  difficulty: "Beginner" | "Intermediate" | "Advanced"
-  teamSize: string
-  features: string[]
-}
+  title: string;
+  desc: string;
+  icon: React.ReactNode;
+  tags: string[];
+};
 
 const ITEMS: Item[] = [
   {
@@ -175,7 +160,7 @@ const ITEMS: Item[] = [
     difficulty: "Beginner",
     teamSize: "2-5 members"
   },
-]
+];
 
 export function ProblemStatements() {
   const [open, setOpen] = React.useState<string | null>(null)
@@ -190,108 +175,44 @@ export function ProblemStatements() {
   }
 
   return (
-    <div className="space-y-8">
-      {/* Overview Section */}
-      <div className="text-center max-w-3xl mx-auto mb-12">
-        <p className="text-muted-foreground text-lg">
-          Select a problem statement that aligns with your passion and expertise. Each track offers unique challenges and opportunities to create meaningful impact.
-        </p>
-      </div>
-
-      {/* Problem Statements Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {ITEMS.map((item) => (
-          <React.Fragment key={item.id}>
-            <Card 
-              className="group relative p-6 transition-all duration-300 hover:shadow-xl cursor-pointer border-2 hover:border-blue-300 hover:bg-blue-50/30"
-              onClick={() => setOpen(item.id)}
-            >
-              {/* Header */}
-              <div className="flex items-start justify-between mb-4">
-                <div className="p-2 bg-blue-100 rounded-lg text-blue-600 transition-transform duration-300 group-hover:scale-110">
-                  {item.icon}
-                </div>
-                <ChevronRight className="h-5 w-5 text-blue-600 transition-transform duration-300 group-hover:translate-x-1" />
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+      {ITEMS.map((it, idx) => (
+        <div key={idx} className="group perspective relative">
+          <Card className="card-3d relative p-5 bg-card/90 border-foreground/10">
+            {/* front */}
+            <div className="card-face flex flex-col h-full justify-between">
+              <div className="flex items-center gap-2 text-brand">
+                {it.icon}
               </div>
-
-              {/* Content */}
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold leading-tight">{item.title}</h3>
-                <p className="text-sm text-muted-foreground line-clamp-3">{item.desc}</p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2">
-                  {item.tags.slice(0, 3).map((tag) => (
-                    <Badge key={tag} variant="outline" className="text-xs bg-white/50 transition-colors group-hover:border-blue-300 group-hover:text-blue-700">
-                      {tag}
-                    </Badge>
-                  ))}
-                  {item.tags.length > 3 && (
-                    <Badge variant="outline" className="text-xs bg-white/50">
-                      +{item.tags.length - 3} more
-                    </Badge>
-                  )}
-                </div>
-
-
+              <div className="mt-4">
+                <h3 className="text-xl font-semibold">{it.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{it.desc}</p>
               </div>
-            </Card>
-
-            <Dialog open={open === item.id} onOpenChange={(isOpen) => !isOpen && setOpen(null)}>
-              <DialogContent className="max-h-[80vh] overflow-y-auto backdrop-blur-sm bg-white/95">
-                <DialogHeader>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="p-2 bg-blue-100 rounded-lg text-blue-600">
-                      {item.icon}
-                    </div>
-                    <DialogTitle className="text-2xl">{item.title}</DialogTitle>
-                  </div>
-                  <DialogDescription>{item.detailedDesc}</DialogDescription>
-                </DialogHeader>
-
-                <div className="space-y-6 mt-4">
-                  <div>
-                    <h4 className="font-semibold text-sm mb-2">Key Features:</h4>
-                    <ul className="text-sm text-muted-foreground space-y-1">
-                      {item.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <span className="text-blue-500 mt-1">•</span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h4 className="font-semibold text-sm mb-2">Example Solutions:</h4>
-                    <ul className="text-sm text-muted-foreground space-y-1">
-                      {item.examples.map((example, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <span className="text-green-500 mt-1">•</span>
-                          {example}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="flex items-center gap-2 p-3 bg-blue-50 rounded-lg">
-                    <TrendingUp className="h-4 w-4 text-blue-600" />
-                    <span className="text-sm font-medium text-blue-800">Impact: {item.impact}</span>
-                  </div>
-
-                  <div className="flex flex-wrap gap-2">
-                    {item.tags.map((tag) => (
-                      <Badge key={tag} variant="outline" className="text-xs border-blue-200 text-blue-700">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              </DialogContent>
-            </Dialog>
-          </React.Fragment>
-        ))}
-      </div>      
+              <div className="mt-4 flex flex-wrap gap-2">
+                {it.tags.map((t) => (
+                  <Badge
+                    key={t}
+                    variant="outline"
+                    className="border-brand text-brand"
+                  >
+                    {t}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+            {/* back */}
+            <div className="card-back absolute inset-0 card-face p-5 flex flex-col justify-center bg-secondary/30 border">
+              <p className="text-sm">
+                Build with responsibility. Ensure data privacy, fairness, and
+                accessibility are core to your solution.
+              </p>
+              <p className="text-xs text-muted-foreground mt-2">
+                Tip: Highlight real-world users and measurable impact.
+              </p>
+            </div>
+          </Card>
+        </div>
+      ))}
     </div>
-  )
+  );
 }

@@ -8,25 +8,24 @@ import { Prizes } from "@/components/prizes";
 import { Organizers } from "@/components/organizers";
 import { Judges } from "@/components/judges";
 import { ContactSection } from "@/components/contact-section";
+import { ViewGuidelines } from "@/components/view-guidelines";
 import { EventHighlights } from "@/components/EventHighLights";
+
 export default function Page() {
   return (
     <main className="min-h-[100dvh]">
       <NavBar />
       <Hero />
-      <div className="w-full">
-        <EventHighlights />
-      </div>
-      <About />
+      <EventHighlights />
       <section
         id="problems"
         aria-labelledby="problems-title"
-        className="py-16 md:py-24 bg-secondary/10"
+        className="pt-6 pb-16 md:pb-24 bg-secondary/10"
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 ">
           <h2
             id="problems-title"
-            className="text-3xl md:text-4xl font-semibold text-pretty mb-8"
+            className="text-3xl md:text-4xl font-semibold text-pretty my-8"
           >
             Problem Statements
           </h2>
@@ -79,6 +78,21 @@ export default function Page() {
         </div>
       </section>
       <section
+        id="guidelines"
+        aria-labelledby="guidelines-title"
+        className="pt-16 pb-10 md:py-24"
+      >
+        <div className="container mx-auto px-4">
+          <h2
+            id="guidelines-title"
+            className="text-3xl md:text-4xl font-semibold text-pretty mb-7"
+          >
+            Guidelines
+          </h2>
+          <ViewGuidelines />
+        </div>
+      </section>
+      <section
         id="organizers"
         aria-labelledby="organizers-title"
         className="py-16 md:py-24"
@@ -87,7 +101,7 @@ export default function Page() {
           <Organizers />
         </div>
       </section>
-      <section
+      {/* <section
         id="judges"
         aria-labelledby="judges-title"
         className="py-16 md:py-24 bg-secondary/10"
@@ -95,7 +109,7 @@ export default function Page() {
         <div className="container mx-auto px-4">
           <Judges />
         </div>
-      </section>
+      </section> */}
       <ContactSection />
       <footer className="py-8 border-t">
         <div className="container mx-auto px-4 text-sm text-muted-foreground">

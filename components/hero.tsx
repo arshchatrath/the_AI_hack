@@ -7,128 +7,40 @@ export function Hero() {
   return (
     <section id="home" className="relative isolate bg-background py-0">
       <CircuitBackground />
-      <div className="container mx-auto px-4 pt-8 md:pt-12">
-        {/* Main Content Area */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* Left Content (3 columns) */}
-          <div className="lg:col-span-3">
-            <div className="flex flex-col items-center lg:items-start">
-              {/* Institutional Header */}
-              <div className="mb-8 text-center lg:text-left w-full">
-                <h2 className="text-2xl md:text-3xl font-semibold text-[#00BFA5] mb-2">
-                  TIET-UQ Center of Excellence in Data Science & AI
-                </h2>
-                <h3 className="text-xl md:text-2xl font-semibold mb-2">
-                  Thapar Institute of Engineering and Technology, Patiala
-                </h3>
-                <p className="text-lg font-semibold mb-2">
-                  Presents
-                </p>
-              </div>
+      <div className="container mx-auto px-4 pt-24 md:pt-32 pb-20 flex flex-col items-center justify-center">
+        <div className="max-w-5xl w-full flex flex-col items-center text-center">
+          <p className="inline-flex items-center gap-2 text-sm md:text-base font-semibold rounded-full border border-blue-200 px-5 py-1.5 bg-blue-100 mb-8 text-blue-800 shadow">
+            Inclusive • Ethical • Impact
+            <span
+              className="inline-block h-2.5 w-2.5 rounded-full bg-blue-400"
+              aria-hidden
+            />
+          </p>
+          <h1 className="text-5xl md:text-7xl font-extrabold text-pretty leading-tight text-foreground drop-shadow-sm">
+            Innovation Challenge 2026
+          </h1>
+          <h1 className="text-xl md:text-7xl text-pretty text-foreground drop-shadow-sm">
+            SabkaAI: AI for Inclusion
+          </h1>
 
-              {/* Main Title */}
-              <h1 className="text-4xl md:text-6xl lg:text-6xl font-extrabold text-pretty leading-tight text-[#3F51B5] mb-2">
-                Innovation Challenge 2026<br />
-                AI for Inclusion
-              </h1>
+          <p className="mt-6 text-xl text-muted-foreground font-medium">
+            The Innovation Challenge, part of the IndiaAI Impact Summit,
+            champions inclusive and culturally grounded AI solutions that are
+            equitable, accessible, and impactful empowering people and
+            accelerating progress through responsible AI.
+          </p>
 
-              {/* Description */}
-              <p className="mt-2 text-xl md:text-2xl text-muted-foreground font-medium max-w-2xl text-center lg:text-left">
-                Building bias-free AI solutions for an inclusive tomorrow.
-              </p>
-              
-              <p className="mt-4 text-lg text-muted-foreground font-medium max-w-2xl text-center lg:text-left">
-                The AI Impact Summit follows three guiding Sutras to harness AI for good. Its mission is to serve the Planet, empower People, and drive global Progress.
-              </p>
-
-              {/* Action Buttons */}
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Button
-                  className="bg-[#00BFA5] hover:bg-[#00A895] text-white px-8 py-6 text-lg font-semibold rounded-lg transition-all duration-200"
-                >
-                  Register Now
-                </Button>
-                <Button
-                  variant="outline"
-                  className="text-base px-6 py-6 rounded-lg border-muted-foreground/30"
-                  onClick={() => window.open('https://impact.indiaai.gov.in/themes', '_blank')}
-                >
-                  View Guidelines
-                </Button>
-              </div>
-
-              {/* Registration Timer */}
-              <div className="mt-8 inline-flex items-center gap-2 text-sm font-medium bg-blue-50 text-blue-800 px-4 py-2 rounded-full">
-                <span className="text-blue-600">Registration closes in:</span>
-                <span>0d 0h 0m 0s</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Content (1 column) - Image and Event Highlights */}
-          <div className="lg:col-span-1">
-            {/* Collaboration Logo */}
-            <div className="mb-8 flex justify-center">
-              <div className="inline-block rounded-xl border-2 border-[#00BFA5]/20 bg-white/50 backdrop-blur-sm p-4 shadow-lg">
-                <img
-                  src="/collab_logo.png"
-                  alt="Collaboration Logo"
-                  className="w-auto h-auto max-w-full"
-                  onError={(e) => {
-                    e.currentTarget.style.display = "none";
-                  }}
-                />
-              </div>
-            </div>
-
-            {/* Event Highlights */}
-            <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 shadow-lg mt-6 lg:mt-8">
-              <h3 className="text-xl font-semibold mb-6">Event Highlights</h3>
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="text-[#00BFA5]">🏆</div>
-                  <div>
-                    <div className="font-semibold">₹1,75,000</div>
-                    <div className="text-sm text-muted-foreground">Total Prize Pool</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="text-[#00BFA5]">👥</div>
-                  <div>
-                    <div className="font-semibold">500+</div>
-                    <div className="text-sm text-muted-foreground">Expected Participants</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="text-[#00BFA5]">🌍</div>
-                  <div>
-                    <div className="font-semibold">2</div>
-                    <div className="text-sm text-muted-foreground">Participating Nations</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="text-[#00BFA5]">🎫</div>
-                  <div>
-                    <div className="font-semibold">Free Event</div>
-                    <div className="text-sm text-muted-foreground">No Registration Cost</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="text-[#00BFA5]">⏰</div>
-                  <div>
-                    <div className="font-semibold">24 Hours</div>
-                    <div className="text-sm text-muted-foreground">Event Duration</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="text-[#00BFA5]">🔄</div>
-                  <div>
-                    <div className="font-semibold">Hybrid Event</div>
-                    <div className="text-sm text-muted-foreground">Both Offline & Online Mode</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button className="bg-brand text-primary-foreground hover:bg-brand/90 text-lg px-8 py-6 shadow-lg font-semibold rounded-lg transition-all duration-200">
+              Register Now
+            </Button>
+            <Button
+              variant="outline"
+              asChild
+              className="text-base px-6 py-6 rounded-lg border-muted-foreground/30"
+            >
+              <a href="#problems">Explore Tracks</a>
+            </Button>
           </div>
         </div>
       </div>
