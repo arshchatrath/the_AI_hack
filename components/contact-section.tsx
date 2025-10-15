@@ -1,7 +1,6 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin } from "lucide-react";
 import {
   Accordion,
@@ -9,6 +8,39 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
+
+const faqs = [
+  {
+    question: "Can I change my team after submitting the Google Form?",
+    answer:
+      "No, teams cannot be reformed or changed once the Google Form has been submitted. Please ensure your team composition is final before submitting the registration form.",
+  },
+  {
+    question: "Can one student participate in multiple teams?",
+    answer:
+      "No, one student cannot participate from two different teams. Each participant can only be part of one team for the entire hackathon.",
+  },
+  {
+    question: "How many submissions can one team make?",
+    answer:
+      "There can be only one submission per team. Make sure to submit your final and complete solution before the deadline.",
+  },
+  {
+    question: "What is the team size limit?",
+    answer:
+      "Teams must have 2-5 members. You need to form a team with at least one other member and can have up to 4 other members.",
+  },
+  {
+    question: "Who can participate in the IndiaAI Impact Hackathon?",
+    answer:
+      "The hackathon is open to students from recognized institutions, working professionals, entrepreneurs, and innovators. All Indian citizens and residents are welcome to participate.",
+  },
+  {
+    question: "Is there any registration fee?",
+    answer:
+      "No, participation in the IndiaAI Impact Hackathon is completely free. There are no registration fees or hidden charges.",
+  }
+];
 
 export function ContactSection() {
   return (
@@ -20,115 +52,97 @@ export function ContactSection() {
       <div className="container mx-auto px-4">
         <h2
           id="contact-title"
-          className="text-3xl md:text-4xl font-semibold text-pretty mb-8"
+          className="text-3xl md:text-4xl font-semibold text-pretty mb-8 text-center"
         >
           Contact & FAQ
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Contact Info Cards */}
-          <div className="flex flex-col gap-6">
-            <Card className="flex-1 p-6 flex flex-col justify-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {/* Left Side - Contact Info */}
+          <div className="space-y-6">
+            <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
+            
+            <Card className="p-6 border-blue-200 bg-blue-50">
               <div className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-brand" />
+                <Mail className="h-6 w-6 text-blue-600" />
                 <div>
-                  <div className="font-medium">Email</div>
-                  <div className="text-sm text-muted-foreground">
-                    inclusion-hackathon@example.org
+                  <div className="font-semibold text-blue-800">Email</div>
+                  <div className="text-sm text-blue-700">
+                    coe_dsai@thapar.edu
                   </div>
                 </div>
               </div>
             </Card>
-            <Card className="flex-1 p-6 flex flex-col justify-center">
+
+            <Card className="p-6 border-blue-200 bg-blue-50">
               <div className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-brand" />
+                <Phone className="h-6 w-6 text-blue-600" />
                 <div>
-                  <div className="font-medium">SPOC</div>
-                  <div className="text-sm text-muted-foreground">
-                    +91-98765-43210
+                  <div className="font-semibold text-blue-800">SPOC Contact</div>
+                  <div className="text-sm text-blue-700">
+                    +91 97807-08482
                   </div>
                 </div>
               </div>
             </Card>
-            <Card className="flex-1 p-6 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center gap-3">
-                  <MapPin className="h-5 w-5 text-brand" />
-                  <div>
-                    <div className="font-medium">Location</div>
-                    <div className="text-sm text-muted-foreground">
-                      Hybrid • Online + Onsite
-                    </div>
+
+            <Card className="p-6 border-blue-200 bg-blue-50">
+              <div className="flex items-center gap-3">
+                <MapPin className="h-6 w-6 text-blue-600" />
+                <div>
+                  <div className="font-semibold text-blue-800">Location</div>
+                  <div className="text-sm text-blue-700">
+                    Thapar Institute of Engineering and Technology, Patiala
+                  </div>
+                  <div className="text-xs text-blue-600 mt-1">
+                    Hybrid Event (Online + Onsite)
                   </div>
                 </div>
               </div>
-              <div className="mt-4 overflow-hidden rounded-md">
-                <img
-                  src="/map-abstract-grid.jpg"
-                  alt="Map placeholder"
-                  className="w-full h-28 object-cover"
-                />
-              </div>
             </Card>
+
+            {/* Important Team Rules */}
+            <div className="p-6 bg-blue-50 border border-blue-200 rounded-lg">
+              <h4 className="text-lg font-semibold text-blue-800 mb-3">
+                ⚠️ Important Team Rules
+              </h4>
+              <ul className="space-y-2 text-sm text-blue-700">
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-500 mt-1">•</span>
+                  <span><strong>No team changes:</strong> Teams cannot be reformed or changed once the Google Form is submitted</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-500 mt-1">•</span>
+                  <span><strong>One team per student:</strong> Each participant can only be part of one team</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-500 mt-1">•</span>
+                  <span><strong>One submission per team:</strong> Each team can make only one final submission</span>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          {/* Message & FAQ */}
-          <div className="lg:col-span-2 flex flex-col gap-6">
-            <Card className="p-8 flex-1 flex flex-col justify-between">
-              <div>
-                <h3 className="font-semibold mb-4 text-xl">Quick Message</h3>
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    alert(
-                      "Thanks for reaching out! We’ll get back to you soon."
-                    );
-                  }}
-                  className="grid gap-4"
+          {/* Right Side - FAQ */}
+          <div className="space-y-6">
+            <h3 className="text-xl font-semibold mb-4">Frequently Asked Questions</h3>
+            
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              {faqs.map((faq, index) => (
+                <AccordionItem 
+                  key={index} 
+                  value={`item-${index}`}
+                  className="border border-blue-200 rounded-lg px-6 bg-white shadow-sm"
                 >
-                  <input
-                    className="h-12 rounded-md border bg-background px-4"
-                    placeholder="Your email"
-                    aria-label="Your email"
-                    required
-                  />
-                  <textarea
-                    className="min-h-32 rounded-md border bg-background p-4"
-                    placeholder="Message"
-                    aria-label="Message"
-                    required
-                  />
-                  <Button className="bg-brand text-primary-foreground hover:bg-brand/90 w-full mt-2">
-                    Send
-                  </Button>
-                </form>
-              </div>
-              <div className="mt-10">
-                <h4 className="font-semibold mb-3 text-lg">FAQ</h4>
-                <Accordion type="single" collapsible className="w-full">
-                  <AccordionItem value="a1">
-                    <AccordionTrigger>Who can participate?</AccordionTrigger>
-                    <AccordionContent>
-                      Students and professionals from anywhere in the world are
-                      welcome.
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="a2">
-                    <AccordionTrigger>Is it free?</AccordionTrigger>
-                    <AccordionContent>
-                      Yes, participation is free. Some onsite perks may be
-                      limited.
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="a3">
-                    <AccordionTrigger>Team size?</AccordionTrigger>
-                    <AccordionContent>
-                      Teams of 1-5 participants are allowed.
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
-              </div>
-            </Card>
+                  <AccordionTrigger className="text-left hover:text-blue-600 py-6">
+                    <span className="font-semibold">{faq.question}</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pb-6 leading-relaxed">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
       </div>

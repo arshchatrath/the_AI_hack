@@ -19,12 +19,12 @@ type Form = {
 };
 
 const TRACKS = [
-  "Financial Literacy (Rural)",
-  "Multilingual Accessibility",
-  "AI Tutors (Schools)",
-  "Bias-Free Recruitment",
-  "Energy Saving",
-  "Open Challenge",
+  "AI for Healthcare & Wellness",
+  "Smart Agriculture & Food Security",
+  "Education & Skill Development",
+  "Financial Inclusion & Fintech",
+  "Governance & Public Services",
+  "Open Innovation Track",
 ];
 
 export function Registration() {
@@ -194,7 +194,7 @@ export function Registration() {
                 </summary>
                 <ul className="mt-2 list-disc pl-5 text-sm text-muted-foreground">
                   <li>Students and professionals worldwide</li>
-                  <li>Teams of 1-5 participants</li>
+                  <li>Teams of 2-5 participants</li>
                   <li>Project submissions before the deadline</li>
                 </ul>
               </details>

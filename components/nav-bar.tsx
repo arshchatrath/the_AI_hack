@@ -3,19 +3,20 @@
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { DarkModeToggle } from "./dark-mode-toggle";
+
 import { Menu } from "lucide-react";
 import Image from "next/image";
 
 const LINKS = [
-  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
   { href: "#problems", label: "Problem Statements" },
   { href: "#timeline", label: "Timeline" },
+  { href: "#prizes", label: "Prizes" },
   { href: "#registration", label: "Registration" },
   { href: "#guidelines", label: "Guidelines" }, // Added Guidelines section
   { href: "#organizers", label: "Organizers" },
   { href: "#judges", label: "Judges" },
-  { href: "#contact", label: "Contact" },
+  { href: "#contact", label: "Contact & FAQ" },
 ];
 
 export function NavBar() {
@@ -101,7 +102,6 @@ export function NavBar() {
               </a>
             ))}
             <div className="flex items-center gap-3 pt-2">
-              <DarkModeToggle />
               <Button
                 asChild
                 className="bg-brand text-primary-foreground hover:bg-brand/90 w-full"

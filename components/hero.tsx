@@ -5,7 +5,7 @@ import { CircuitBackground } from "./circuit-background";
 
 export function Hero() {
   return (
-    <section id="home" className="relative isolate bg-background py-20">
+    <section id="home" className="relative isolate bg-background py-0">
       <CircuitBackground />
       <div className="container mx-auto px-4 pt-24 md:pt-32 pb-20 flex flex-col items-center justify-center">
         <div className="max-w-5xl w-full flex flex-col items-center text-center">
@@ -44,7 +44,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-      {/* Edge-to-edge Event Highlights at the end */}
     </section>
   );
 }
