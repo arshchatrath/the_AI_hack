@@ -1,7 +1,13 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { ExternalLink, Users, Calendar, Trophy } from "lucide-react";
 
 import { HACKATHON_CONFIG } from "@/lib/config";
@@ -9,9 +15,11 @@ import { HACKATHON_CONFIG } from "@/lib/config";
 export function RegistrationForm() {
   const handleRegistration = () => {
     if (HACKATHON_CONFIG.GOOGLE_FORM_URL) {
-      window.open(HACKATHON_CONFIG.GOOGLE_FORM_URL, '_blank');
+      window.open(HACKATHON_CONFIG.GOOGLE_FORM_URL, "_blank");
     } else {
-      alert("Registration will open soon! Please check back later for the Google Form link.");
+      alert(
+        "Registration will open soon! Please check back later for the Google Form link."
+      );
     }
   };
 
@@ -21,7 +29,9 @@ export function RegistrationForm() {
         {/* Registration Info */}
         <Card className="border-2 border-blue-200">
           <CardHeader>
-            <CardTitle className="text-2xl text-blue-600">Ready to Innovate?</CardTitle>
+            <CardTitle className="text-2xl text-blue-600">
+              Ready to Innovate?
+            </CardTitle>
             <CardDescription className="text-lg">
               Join India's premier AI hackathon and create solutions that matter
             </CardDescription>
@@ -33,14 +43,14 @@ export function RegistrationForm() {
             </div>
             <div className="flex items-center gap-3">
               <Calendar className="h-5 w-5 text-blue-500" />
-              <span>48-hour intensive hackathon</span>
+              <span>24+ hour intensive hackathon</span>
             </div>
             <div className="flex items-center gap-3">
               <Trophy className="h-5 w-5 text-blue-500" />
               <span>₹1.75L total prize pool</span>
             </div>
-            
-            <Button 
+
+            <Button
               onClick={handleRegistration}
               className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-blue-600 hover:to-cyan-600 text-lg py-6"
             >
@@ -60,7 +70,9 @@ export function RegistrationForm() {
               <h4 className="font-semibold mb-2">Who Can Participate?</h4>
               <ul className="text-sm text-muted-foreground space-y-1">
                 <li>• Students from any recognized institution from India</li>
-                <li>• Students from University of Queensland, Brisbane,Australia</li>
+                <li>
+                  • Students from University of Queensland, Brisbane,Australia
+                </li>
               </ul>
             </div>
 
@@ -74,7 +86,6 @@ export function RegistrationForm() {
                 <li>• Relevance with Problem Statement</li>
               </ul>
             </div>
-
           </CardContent>
         </Card>
       </div>

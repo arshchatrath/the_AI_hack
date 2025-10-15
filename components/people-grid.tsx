@@ -17,7 +17,6 @@ const ORGS: Person[] = [
   {
     name: "Dr. Inderveer Chana",
     title: "Center Director | Professor and Associate Head",
-
     img: "/dr_channaM.png",
   },
   {

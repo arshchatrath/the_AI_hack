@@ -90,7 +90,7 @@ export function CircuitBackground() {
     <div className="absolute inset-0 -z-10">
       <canvas ref={canvasRef} className="h-full w-full block" aria-hidden />
       {/* Updated gradient to match the orange brand color */}
-      <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_50%_40%,rgba(255,106,26,0.13),rgba(255,255,255,0.7)_80%,transparent_100%)] pointer-events-none mix-blend-multiply" />
+      <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_50%_40%,rgba(32,184,205,0.16),rgba(255,255,255,0.7)_80%,transparent_100%)] pointer-events-none mix-blend-multiply" />
     </div>
   );
 }

@@ -8,78 +8,79 @@ interface Organizer {
   id: string;
   name: string;
   role: string;
-  organization: string;
+
   image: string;
-  bio: string;
-  expertise: string[];
 }
 
 // Sample data - you can easily modify this
 const organizers: Organizer[] = [
   {
     id: "1",
-    name: "Dr. Sample Name",
-    role: "Event Director",
-    organization: "TIET",
-    image: "/placeholder-avatar.jpg",
-    bio: "Leading expert in AI and Data Science with 15+ years of experience in academia and industry.",
-    expertise: ["AI", "Machine Learning", "Data Science"]
+    name: "Dr. Inderveer Chana",
+    role: "Center Director | Professor and Associate Head",
+    image: "/dr_channaM.png",
   },
   {
     id: "2",
-    name: "Prof. Sample Name",
-    role: "Technical Lead",
-    organization: "University of Queensland",
-    image: "/placeholder-avatar.jpg",
-    bio: "Renowned researcher in artificial intelligence and computer vision applications.",
-    expertise: ["Computer Vision", "Deep Learning", "Research"]
+    name: "Dr. Tim Miller",
+    role: "Center Director | Professor",
+
+    image: "/tim.png",
   },
   {
     id: "3",
-    name: "Dr. Sample Name",
-    role: "Program Coordinator",
-    organization: "TIET",
-    image: "/placeholder-avatar.jpg",
-    bio: "Expert in educational technology and student engagement programs.",
-    expertise: ["EdTech", "Program Management", "Innovation"]
+    name: "Dr. Maninder Singh",
+    role: "Professor",
+
+    image: "/manminder (2).jpg",
   },
   {
     id: "4",
-    name: "Prof. Sample Name",
-    role: "Industry Liaison",
-    organization: "University of Queensland",
-    image: "/placeholder-avatar.jpg",
-    bio: "Bridging academia and industry with extensive experience in technology transfer.",
-    expertise: ["Industry Relations", "Technology Transfer", "Innovation"]
+    name: "Dr. Anju Bala",
+    role: "Education and Training Coordinator | Associate Professor",
+
+    image: "/anju_bala_mam.png",
   },
   {
     id: "5",
-    name: "Dr. Sample Name",
-    role: "Student Affairs",
-    organization: "TIET",
-    image: "/placeholder-avatar.jpg",
-    bio: "Dedicated to student success and creating inclusive learning environments.",
-    expertise: ["Student Affairs", "Mentorship", "Inclusion"]
+    name: "Dr. Sachin Kansal",
+    role: "Research and Innovation Coordinator | Assistant Professor",
+
+    image: "/sachin_sir.jpg",
   },
   {
     id: "6",
-    name: "Prof. Sample Name",
-    role: "Research Coordinator",
-    organization: "University of Queensland",
-    image: "/placeholder-avatar.jpg",
-    bio: "Leading research initiatives in AI for social good and sustainable development.",
-    expertise: ["Research", "Social Impact", "Sustainability"]
+    name: "Dr. Harpreet Singh",
+    role: "Assistant Professor",
+
+    image: "/harpreet_sir.jpeg",
   },
+
   {
     id: "7",
-    name: "Dr. Sample Name",
-    role: "Operations Manager",
-    organization: "TIET",
-    image: "/placeholder-avatar.jpg",
-    bio: "Ensuring smooth operations and logistics for large-scale academic events.",
-    expertise: ["Operations", "Event Management", "Logistics"]
-  }
+    name: "Dr. Amrita Kaur",
+    role: "Assistant Professor",
+
+    image: "/harpreet_mam (1).jpg",
+  },
+
+  {
+    id: "8",
+    name: "Dr. Maggi Bansal",
+    role: "Assistant Professor",
+
+    image: "/maggi.jpeg",
+  },
 ];
+// {
+//   id: "7",
+//   name: "Dr. Sample Name",
+//   role: "Operations Manager",
+//   organization: "TIET",
+//   image: "/placeholder-avatar.jpg",
+//   bio: "Ensuring smooth operations and logistics for large-scale academic events.",
+//   expertise: ["Operations", "Event Management", "Logistics"]
+// }
 
 export function Organizers() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
@@ -89,11 +90,12 @@ export function Organizers() {
       <div className="text-center">
         <h3 className="text-2xl font-bold mb-4">Meet Our Organizers</h3>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          Our dedicated team of faculty and staff from both institutions working together to make this event a success.
+          Our dedicated team of faculty and staff from both institutions working
+          together to make this event a success.
         </p>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
         {organizers.map((organizer) => (
           <div
             key={organizer.id}
@@ -102,27 +104,33 @@ export function Organizers() {
             onMouseLeave={() => setHoveredId(null)}
           >
             {/* Main Card */}
-            <Card className="p-4 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer border-blue-200">
+            <Card className="p-4 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 min-h-[250px] cursor-pointer border-blue-200">
               <div className="relative mb-3">
                 <img
                   src={organizer.image}
                   alt={organizer.name}
                   className="w-16 h-16 rounded-full mx-auto object-cover border-2 border-blue-200"
                   onError={(e) => {
-                    e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(organizer.name)}&background=3b82f6&color=ffffff&size=64`;
+                    e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(
+                      organizer.name
+                    )}&background=3b82f6&color=ffffff&size=64`;
                   }}
                 />
                 <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">
-                    {organizer.organization === 'TIET' ? 'T' : 'Q'}
-                  </span>
+                  {/* <span className="text-white text-xs font-bold">
+                    {organizer.organization === "TIET" ? "T" : "Q"}
+                  </span> */}
                 </div>
               </div>
-              <h4 className="font-semibold text-sm mb-1 leading-tight">{organizer.name}</h4>
-              <p className="text-xs text-blue-600 font-medium mb-2">{organizer.role}</p>
-              <Badge variant="outline" className="text-xs">
+              <h4 className="font-semibold text-sm mb-1 leading-tight">
+                {organizer.name}
+              </h4>
+              <p className="text-xs text-blue-600 font-medium mb-2">
+                {organizer.role}
+              </p>
+              {/* <Badge variant="outline" className="text-xs">
                 {organizer.organization}
-              </Badge>
+              </Badge> */}
             </Card>
 
             {/* Hover Popup */}
@@ -135,24 +143,32 @@ export function Organizers() {
                       alt={organizer.name}
                       className="w-12 h-12 rounded-full mx-auto object-cover border-2 border-blue-200 mb-2"
                       onError={(e) => {
-                        e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(organizer.name)}&background=3b82f6&color=ffffff&size=48`;
+                        e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(
+                          organizer.name
+                        )}&background=3b82f6&color=ffffff&size=48`;
                       }}
                     />
                     <h4 className="font-semibold text-sm">{organizer.name}</h4>
-                    <p className="text-xs text-blue-600 font-medium">{organizer.role}</p>
-                    <Badge variant="outline" className="text-xs mt-1">
+                    <p className="text-xs text-blue-600 font-medium">
+                      {organizer.role}
+                    </p>
+                    {/* <Badge variant="outline" className="text-xs mt-1">
                       {organizer.organization}
-                    </Badge>
+                    </Badge> */}
                   </div>
-                  <p className="text-xs text-muted-foreground mb-3 leading-relaxed">
+                  {/* <p className="text-xs text-muted-foreground mb-3 leading-relaxed">
                     {organizer.bio}
-                  </p>
+                  </p> */}
                   <div className="flex flex-wrap gap-1">
-                    {organizer.expertise.map((skill, index) => (
-                      <Badge key={index} variant="secondary" className="text-xs">
+                    {/* {organizer.expertise.map((skill, index) => (
+                      <Badge
+                        key={index}
+                        variant="secondary"
+                        className="text-xs"
+                      >
                         {skill}
                       </Badge>
-                    ))}
+                    ))} */}
                   </div>
                   {/* Arrow */}
                   <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white"></div>

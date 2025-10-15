@@ -51,14 +51,14 @@ export function NavBar() {
             width={200}
             height={136}
             priority
-            className="bg-[#ff6a1a] rounded-lg px-6 py-2"
+            className="bg-brand rounded-lg px-6 py-2"
           />
         </Link>
         <div className="hidden md:flex items-center gap-6">
           {LINKS.map((l) => (
             <a
               key={l.href}
-              ref={(el) => (linkRefs.current[l.href] = el)}
+              // ref={(el) => (linkRefs.current[l.href] = el)}
               href={l.href}
               className="relative text-sm hover:text-primary transition-colors"
             >
