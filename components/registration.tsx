@@ -1,6 +1,7 @@
 "use client";
 
 import type React from "react";
+import r from "react";
 
 import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -287,7 +288,7 @@ function Field({
   error,
 }: {
   label: string;
-  children: React.ReactNode;
+  children: r.ReactNode;
   error?: boolean;
 }) {
   return (
