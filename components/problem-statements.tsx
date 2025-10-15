@@ -195,7 +195,7 @@ export function ProblemStatements() {
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
       {ITEMS.map((it, idx) => (
         <div key={idx} className="group perspective relative">
-          <Card className="card-3d relative p-5 bg-card/90 border-foreground/10">
+          <Card className="card-3d relative p-5 bg-card/90 border-foreground/10 min-h-[220px]">
             {/* front */}
             <div className="card-face flex flex-col h-full justify-between">
               <div className="flex items-center gap-2 text-brand">

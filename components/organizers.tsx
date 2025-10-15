@@ -104,12 +104,12 @@ export function Organizers() {
             onMouseLeave={() => setHoveredId(null)}
           >
             {/* Main Card */}
-            <Card className="p-4 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 min-h-[250px] cursor-pointer border-blue-200">
+            <Card className="p-4 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 min-h-[300px] cursor-pointer border-blue-200">
               <div className="relative mb-3">
                 <img
                   src={organizer.image}
                   alt={organizer.name}
-                  className="w-16 h-16 rounded-full mx-auto object-cover border-2 border-blue-200"
+                  className="w-32 h-32 rounded-full mx-auto object-cover border-2 border-blue-200"
                   onError={(e) => {
                     e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(
                       organizer.name
@@ -122,7 +122,7 @@ export function Organizers() {
                   </span> */}
                 </div>
               </div>
-              <h4 className="font-semibold text-sm mb-1 leading-tight">
+              <h4 className="font-semibold text-md mb-1 leading-tight">
                 {organizer.name}
               </h4>
               <p className="text-xs text-blue-600 font-medium mb-2">
@@ -141,6 +141,8 @@ export function Organizers() {
                     <img
                       src={organizer.image}
                       alt={organizer.name}
+                      height={12}
+                      width={12}
                       className="w-12 h-12 rounded-full mx-auto object-cover border-2 border-blue-200 mb-2"
                       onError={(e) => {
                         e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(

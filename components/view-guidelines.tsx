@@ -18,11 +18,9 @@ export function ViewGuidelines() {
           <AccordionContent>
             <ul className="list-disc pl-6 space-y-2">
               <li className="text-base md:text-lg font-semibold">
-                Teams of 1-5 participants are allowed.
+                Teams of 2-5 participants are allowed.
               </li>
-              <li className="text-base md:text-lg font-semibold">
-                Open to students and professionals globally.
-              </li>
+
               <li className="text-base md:text-lg font-semibold">
                 All submissions must be original and created during the
                 hackathon.
