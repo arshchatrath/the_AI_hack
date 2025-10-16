@@ -5,17 +5,14 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 
 import { Menu } from "lucide-react";
-import Image from "next/image";
 
 const LINKS = [
-  { href: "#about", label: "About" },
   { href: "#problems", label: "Problem Statements" },
   { href: "#timeline", label: "Timeline" },
   { href: "#prizes", label: "Prizes" },
   { href: "#registration", label: "Registration" },
-  { href: "#guidelines", label: "Guidelines" }, // Added Guidelines section
   { href: "#organizers", label: "Organizers" },
-  { href: "#judges", label: "Judges" },
+  // { href: "#judges", label: "Judges" },
   { href: "#contact", label: "Contact & FAQ" },
 ];
 
@@ -45,20 +42,14 @@ export function NavBar() {
     <header className="sticky top-0 z-50 border-b bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="#home" className="flex items-center gap-2 font-semibold">
-          <Image
-            src="/coe-logo.png"
-            alt="IndiaAI Logo"
-            width={200}
-            height={136}
-            priority
-            className="bg-brand rounded-lg px-6 py-2"
-          />
+          <span className="h-6 w-6 rounded-sm bg-gradient-to-r from-blue-500 to-cyan-500" aria-hidden />
+          <span>AI for Inclusion</span>
         </Link>
         <div className="hidden md:flex items-center gap-6">
           {LINKS.map((l) => (
             <a
               key={l.href}
-              // ref={(el) => (linkRefs.current[l.href] = el)}
+              ref={(el) => (linkRefs.current[l.href] = el)}
               href={l.href}
               className="relative text-sm hover:text-primary transition-colors"
             >

@@ -2,13 +2,10 @@
 
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { useState } from "react";
-
 interface Organizer {
   id: string;
   name: string;
   role: string;
-
   image: string;
 }
 
@@ -83,8 +80,6 @@ const organizers: Organizer[] = [
 // }
 
 export function Organizers() {
-  const [hoveredId, setHoveredId] = useState<string | null>(null);
-
   return (
     <div className="space-y-8">
       <div className="text-center">
@@ -99,84 +94,29 @@ export function Organizers() {
         {organizers.map((organizer) => (
           <div
             key={organizer.id}
-            className="relative group"
-            onMouseEnter={() => setHoveredId(organizer.id)}
-            onMouseLeave={() => setHoveredId(null)}
+            className="group relative transform transition-all duration-300 hover:-translate-y-2"
           >
-            {/* Main Card */}
-            <Card className="p-4 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 min-h-[300px] cursor-pointer border-blue-200">
-              <div className="relative mb-3">
+            <div className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 opacity-0 blur transition duration-500 group-hover:opacity-30"></div>
+            <Card className="relative p-4 text-center bg-white/50 backdrop-blur-sm transition-all duration-300 hover:shadow-xl min-h-[300px] border-blue-200/50">
+              <div className="mb-3 transform transition-all duration-500 group-hover:scale-105">
                 <img
                   src={organizer.image}
                   alt={organizer.name}
-                  className="w-32 h-32 rounded-full mx-auto object-cover border-2 border-blue-200"
+                  className="w-32 h-32 rounded-full mx-auto object-cover border-2 border-blue-200/50 shadow-md transition-all duration-500 group-hover:border-blue-300 group-hover:shadow-blue-200/50"
                   onError={(e) => {
                     e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(
                       organizer.name
                     )}&background=3b82f6&color=ffffff&size=64`;
                   }}
                 />
-                <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center">
-                  {/* <span className="text-white text-xs font-bold">
-                    {organizer.organization === "TIET" ? "T" : "Q"}
-                  </span> */}
-                </div>
               </div>
-              <h4 className="font-semibold text-md mb-1 leading-tight">
+              <h4 className="font-semibold text-md mb-2 leading-tight transition-all duration-500 group-hover:text-blue-600">
                 {organizer.name}
               </h4>
-              <p className="text-xs text-blue-600 font-medium mb-2">
+              <p className="text-xs text-blue-600/80 font-medium transition-all duration-500 group-hover:text-blue-700">
                 {organizer.role}
               </p>
-              {/* <Badge variant="outline" className="text-xs">
-                {organizer.organization}
-              </Badge> */}
             </Card>
-
-            {/* Hover Popup */}
-            {hoveredId === organizer.id && (
-              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-50 animate-in fade-in slide-in-from-bottom-2 duration-200">
-                <Card className="p-4 w-64 bg-white border-blue-200 shadow-xl">
-                  <div className="text-center mb-3">
-                    <img
-                      src={organizer.image}
-                      alt={organizer.name}
-                      height={12}
-                      width={12}
-                      className="w-12 h-12 rounded-full mx-auto object-cover border-2 border-blue-200 mb-2"
-                      onError={(e) => {
-                        e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(
-                          organizer.name
-                        )}&background=3b82f6&color=ffffff&size=48`;
-                      }}
-                    />
-                    <h4 className="font-semibold text-sm">{organizer.name}</h4>
-                    <p className="text-xs text-blue-600 font-medium">
-                      {organizer.role}
-                    </p>
-                    {/* <Badge variant="outline" className="text-xs mt-1">
-                      {organizer.organization}
-                    </Badge> */}
-                  </div>
-                  {/* <p className="text-xs text-muted-foreground mb-3 leading-relaxed">
-                    {organizer.bio}
-                  </p> */}
-                  <div className="flex flex-wrap gap-1">
-                    {/* {organizer.expertise.map((skill, index) => (
-                      <Badge
-                        key={index}
-                        variant="secondary"
-                        className="text-xs"
-                      >
-                        {skill}
-                      </Badge>
-                    ))} */}
-                  </div>
-                  {/* Arrow */}
-                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white"></div>
-                </Card>
-              </div>
-            )}
           </div>
         ))}
       </div>

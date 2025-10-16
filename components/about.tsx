@@ -6,7 +6,7 @@ import { ExternalLink, MapPin, Users, Award, Calendar } from "lucide-react";
 export function About() {
 
   return (
-    <section id="about" className="py-16 md:py-24 bg-white relative overflow-hidden">
+    <section id="about" className="py-16 md:py-0 bg-white relative overflow-hidden">
       {/* Subtle gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-cyan-50/50" />
       

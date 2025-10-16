@@ -18,6 +18,15 @@ export default function Page() {
     <main className="min-h-[100dvh]">
       <NavBar />
       <Hero />
+      <section
+        id="about"
+        aria-labelledby="about-title"
+        className="py-16 md:py-24"
+      >
+        <div className="container mx-auto px-4">
+          <About />
+        </div>
+      </section>
       <EventHighlights />
       <section
         id="problems"
