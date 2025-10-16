@@ -31,163 +31,147 @@ type Item = {
   tags: string[]
   examples: string[]
   impact: string
-  difficulty: "Beginner" | "Intermediate" | "Advanced"
   teamSize: string
   features: string[]
 }
 
 const ITEMS: Item[] = [
   {
-    id: "healthcare",
-    title: "AI for Healthcare & Wellness",
-    desc: "Develop AI solutions for early disease detection, telemedicine, mental health support, or healthcare accessibility in rural areas.",
-    detailedDesc: "Create innovative AI-powered healthcare solutions that can bridge the gap between urban and rural healthcare access. Focus on preventive care, early diagnosis, and mental health support systems that can work with limited infrastructure.",
-    icon: <Heart className="h-6 w-6" />,
-    tags: ["Computer Vision", "NLP", "Predictive Analytics", "Telemedicine"],
+    id: "financial-literacy",
+    title: "AI for Financial Literacy to Rural People",
+    desc: "Enhance socio-economic development for rural India through AI-powered financial education solutions.",
+    detailedDesc: "Create innovative AI solutions to bridge the financial literacy gap in rural India. Focus on developing conversational AI systems that can educate and guide rural populations about financial services in their local languages.",
+    icon: <CreditCard className="h-6 w-6" />,
+    tags: ["NLP", "Local Languages", "Chatbots", "Financial Education"],
     examples: [
-      "AI-powered diagnostic tools for rural clinics",
-      "Mental health chatbots in local languages",
-      "Predictive models for disease outbreaks",
-      "Wearable health monitoring systems"
+      "Multilingual financial literacy chatbots",
+      "Voice-based financial advisory systems",
+      "Interactive financial education modules",
+      "Personalized financial planning assistants"
     ],
     features: [
-      "Multi-language support for rural areas",
-      "Offline functionality for low connectivity",
-      "Integration with existing healthcare systems",
-      "Privacy-compliant data handling"
+      "Support for multiple Indian languages",
+      "Voice and text-based interactions",
+      "Offline content accessibility",
+      "Cultural context awareness"
     ],
-    impact: "Improve healthcare access for 70% of India's rural population",
-    difficulty: "Intermediate",
-    teamSize: "3-5 members"
-  },
-  {
-    id: "agriculture",
-    title: "Smart Agriculture & Food Security",
-    desc: "Create AI-powered solutions for crop monitoring, yield prediction, pest detection, or sustainable farming practices.",
-    detailedDesc: "Develop cutting-edge agricultural technologies that help farmers increase productivity while maintaining sustainability. Focus on precision farming, resource optimization, and climate-resilient agriculture.",
-    icon: <Sprout className="h-6 w-6" />,
-    tags: ["IoT", "Satellite Imagery", "ML", "Precision Farming"],
-    examples: [
-      "Drone-based crop health monitoring",
-      "AI-powered pest and disease detection",
-      "Smart irrigation systems",
-      "Market price prediction models"
-    ],
-    features: [
-      "Real-time crop monitoring",
-      "Weather-based recommendations",
-      "Market price integration",
-      "Sustainable farming practices"
-    ],
-    impact: "Support 600+ million farmers across India",
-    difficulty: "Advanced",
-    teamSize: "4-5 members"
-  },
-  {
-    id: "education",
-    title: "Education & Skill Development",
-    desc: "Build personalized learning platforms, skill assessment tools, or AI tutors for quality education access across India.",
-    detailedDesc: "Create adaptive learning systems that can personalize education for diverse learning styles and backgrounds. Focus on bridging the digital divide and making quality education accessible to all.",
-    icon: <GraduationCap className="h-6 w-6" />,
-    tags: ["EdTech", "LLMs", "Adaptive Learning", "Accessibility"],
-    examples: [
-      "Personalized AI tutoring systems",
-      "Skill gap analysis tools",
-      "Multilingual learning platforms",
-      "Virtual lab simulations"
-    ],
-    features: [
-      "Adaptive learning paths",
-      "Progress tracking and analytics",
-      "Multi-modal content delivery",
-      "Gamification elements"
-    ],
-    impact: "Enhance learning for 250+ million students",
-    difficulty: "Intermediate",
+    impact: "Empower millions of rural Indians with financial knowledge",
     teamSize: "3-4 members"
   },
   {
-    id: "fintech",
-    title: "Financial Inclusion & Fintech",
-    desc: "Develop AI solutions for credit scoring, fraud detection, financial literacy, or inclusive banking services.",
-    detailedDesc: "Build financial technologies that can bring banking and financial services to the unbanked population. Focus on alternative credit scoring, fraud prevention, and financial education.",
-    icon: <CreditCard className="h-6 w-6" />,
-    tags: ["Risk Assessment", "NLP", "Blockchain", "Financial Modeling"],
+    id: "accessibility",
+    title: "Multilingual and Multimodal Accessibility Tools",
+    desc: "Develop tools to bridge language and sensory gaps, making technology accessible to people with diverse abilities.",
+    detailedDesc: "Create innovative accessibility solutions that break down barriers in communication and technology use. Focus on real-time translation and conversion tools that enable inclusive access to digital content.",
+    icon: <GraduationCap className="h-6 w-6" />,
+    tags: ["Accessibility", "Sign Language", "Braille", "Real-time Translation"],
     examples: [
-      "Alternative credit scoring for rural populations",
-      "AI-powered fraud detection systems",
-      "Financial literacy chatbots",
-      "Micro-lending platforms"
+      "Real-time sign language translation",
+      "Braille conversion systems",
+      "Multi-modal content adapters",
+      "Assistive reading technologies"
     ],
     features: [
-      "Alternative data sources for credit scoring",
-      "Real-time fraud detection",
-      "Financial education modules",
-      "Mobile-first design"
+      "Real-time processing capabilities",
+      "Multi-device compatibility",
+      "Customizable output formats",
+      "Low-latency performance"
     ],
-    impact: "Include 190+ million unbanked Indians",
-    difficulty: "Advanced",
+    impact: "Enable technology access for millions with diverse abilities",
     teamSize: "4-5 members"
   },
   {
-    id: "governance",
-    title: "Governance & Public Services",
-    desc: "Create AI tools for citizen services, policy analysis, transparency, or efficient government service delivery.",
-    detailedDesc: "Develop solutions that can make government services more efficient, transparent, and citizen-friendly. Focus on reducing bureaucracy, improving service delivery, and enhancing transparency.",
-    icon: <Building2 className="h-6 w-6" />,
-    tags: ["Data Analytics", "Automation", "Transparency", "NLP"],
+    id: "ai-tutors",
+    title: "AI Tutors for Schools",
+    desc: "Create intelligent tutoring systems to support education in schools with limited teaching resources.",
+    detailedDesc: "Develop AI-powered tutoring systems that can provide personalized learning support to students in resource-constrained schools, helping bridge the education gap through technology.",
+    icon: <GraduationCap className="h-6 w-6" />,
+    tags: ["EdTech", "Personalized Learning", "Conversational AI", "Education Analytics"],
     examples: [
-      "Automated document processing systems",
-      "Citizen grievance resolution platforms",
-      "Policy impact analysis tools",
-      "Transparent procurement systems"
+      "Personalized homework assistance",
+      "Adaptive lesson planning",
+      "Interactive doubt resolution",
+      "Progress tracking systems"
     ],
     features: [
-      "Multi-language citizen interfaces",
-      "Automated workflow processing",
-      "Transparency dashboards",
-      "Mobile accessibility"
+      "Personalized learning paths",
+      "Multi-subject support",
+      "Performance analytics",
+      "Offline learning capabilities"
     ],
-    impact: "Serve 1.4+ billion citizens more efficiently",
-    difficulty: "Intermediate",
+    impact: "Support millions of students in underserved schools",
     teamSize: "3-5 members"
   },
   {
-    id: "open",
-    title: "Open Innovation Track",
-    desc: "Propose any AI solution addressing critical challenges in Indian society, economy, or governance.",
-    detailedDesc: "Think outside the box and propose innovative AI solutions for any pressing challenge in India. This track encourages creative thinking and novel approaches to societal problems.",
-    icon: <Lightbulb className="h-6 w-6" />,
-    tags: ["Innovation", "Social Impact", "Creative Thinking", "Open"],
+    id: "recruitment",
+    title: "Bias-Free AI for Recruitment",
+    desc: "Develop AI solutions to ensure fair and equitable hiring processes for all candidates.",
+    detailedDesc: "Create AI systems that can eliminate unconscious bias from recruitment processes, ensuring equal opportunities for all candidates regardless of their background, gender, or other demographic factors.",
+    icon: <Building2 className="h-6 w-6" />,
+    tags: ["HR Tech", "Bias Detection", "Fair AI", "Recruitment"],
     examples: [
-      "Climate change mitigation tools",
-      "Urban planning optimization",
-      "Disaster management systems",
-      "Cultural preservation platforms"
+      "Bias-free resume screening",
+      "Objective skill assessment tools",
+      "Fair interview analysis systems",
+      "Inclusive job description generators"
     ],
     features: [
-      "Creative problem-solving approach",
-      "Novel AI applications",
-      "Social impact focus",
-      "Scalable solutions"
+      "Bias detection algorithms",
+      "Transparent decision making",
+      "Diversity metrics tracking",
+      "Compliance reporting"
     ],
-    impact: "Address any critical societal challenge",
-    difficulty: "Beginner",
+    impact: "Create equal opportunities in employment for all",
+    teamSize: "4-5 members"
+  },
+  {
+    id: "energy",
+    title: "AI for Energy Saving",
+    desc: "Design AI solutions to analyze and optimize building energy consumption patterns.",
+    detailedDesc: "Develop intelligent systems that can analyze data from smart meters and provide actionable recommendations for reducing energy consumption in buildings, promoting sustainability and cost savings.",
+    icon: <Lightbulb className="h-6 w-6" />,
+    tags: ["Energy Analytics", "IoT", "Smart Buildings", "Sustainability"],
+    examples: [
+      "Smart meter data analysis",
+      "Energy consumption forecasting",
+      "Automated efficiency recommendations",
+      "Real-time usage monitoring"
+    ],
+    features: [
+      "Real-time monitoring",
+      "Predictive analytics",
+      "Personalized recommendations",
+      "Cost-saving calculations"
+    ],
+    impact: "Reduce energy consumption and promote sustainability",
+    teamSize: "3-4 members"
+  },
+  {
+    id: "open",
+    title: "Open Challenge: AI for Inclusion",
+    desc: "Propose innovative AI solutions to promote inclusion and accessibility in any domain.",
+    detailedDesc: "Create novel AI applications that address inclusion challenges in society. This track welcomes creative solutions that can make technology, services, or opportunities more accessible to underserved populations.",
+    icon: <Heart className="h-6 w-6" />,
+    tags: ["Innovation", "Social Impact", "Inclusion", "Accessibility"],
+    examples: [
+      "Inclusive technology solutions",
+      "Accessibility enhancement tools",
+      "Social integration platforms",
+      "Adaptive assistance systems"
+    ],
+    features: [
+      "User-centric design",
+      "Inclusive architecture",
+      "Scalable implementation",
+      "Impact measurement"
+    ],
+    impact: "Create a more inclusive and accessible society",
     teamSize: "2-5 members"
   },
 ]
 
 export function ProblemStatements() {
   const [open, setOpen] = React.useState<string | null>(null)
-
-  const getDifficultyColor = (difficulty: string) => {
-    switch (difficulty) {
-      case "Beginner": return "bg-green-100 text-green-800 border-green-200"
-      case "Intermediate": return "bg-yellow-100 text-yellow-800 border-yellow-200"
-      case "Advanced": return "bg-red-100 text-red-800 border-red-200"
-      default: return "bg-gray-100 text-gray-800 border-gray-200"
-    }
-  }
 
   return (
     <div className="space-y-8">
