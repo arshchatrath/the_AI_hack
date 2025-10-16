@@ -2,7 +2,7 @@
 
 export const HACKATHON_CONFIG = {
   // Registration
-  GOOGLE_FORM_URL: "", // Add your Google Form URL here when ready
+  GOOGLE_FORM_URL: "https://forms.gle/ZWeHuWhNrvVq2MGM6", // Google Form URL for registration
   
   // Event Details
   EVENT_NAME: "IndiaAI Impact Hackathon",

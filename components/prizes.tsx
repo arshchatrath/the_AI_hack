@@ -13,7 +13,7 @@ const prizes = [
     bgColor: "bg-yellow-50",
     borderColor: "border-yellow-200",
     description: "Winners of IndiaAI Impact Hackathon",
-    benefits: ["Cash Prize per team", "Mentorship Program", "Incubation Support", "Industry Recognition"]
+    benefits: ["Cash Prize per team", "Mentorship Program", "Certificate", "Industry Recognition"]
   },
   {
     position: "2nd Place (2 Teams)", 

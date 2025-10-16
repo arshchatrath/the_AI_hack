@@ -5,7 +5,7 @@ import React from "react";
 export function EventHighlights() {
   const items = [
     "6 Innovation Tracks",
-    "₹1,00,000 Prize Pool",
+    "₹1,75,000 Prize Pool",
     "Global Participation Welcome",
     "Focus on Rural & Accessibility Solutions",
     "24+ Hour Hackathon",
