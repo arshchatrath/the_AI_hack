@@ -18,7 +18,7 @@ const organizers: Organizer[] = [
     name: "Dr. Inderveer Chana",
     role: "Center Director",
     image: "/dr_channaM.png",
-    institution: "Professor and Associate Head, TIET"
+    institution: "Professor, TIET"
   },
   {
     id: "2",
@@ -39,7 +39,7 @@ const organizers: Organizer[] = [
     name: "Dr. Anju Bala",
     role: "Education and Training Coordinator",
     image: "/anju_bala_mam.png",
-    institution: "Associate Professor, TIET"
+    institution: "Professor and Associate Head, TIET"
   },
   {
     id: "5",
