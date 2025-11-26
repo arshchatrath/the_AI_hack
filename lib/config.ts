@@ -1,8 +1,8 @@
 // Configuration for IndiaAI Impact Hackathon
 
 export const HACKATHON_CONFIG = {
-  // Registration
-  GOOGLE_FORM_URL: "https://forms.gle/ZWeHuWhNrvVq2MGM6", // Google Form URL for registration
+  // Registration (Updated to Devpost)
+  GOOGLE_FORM_URL: "https://innovation-challenge-2026.devpost.com/", 
   
   // Event Details
   EVENT_NAME: "IndiaAI Impact Hackathon",
