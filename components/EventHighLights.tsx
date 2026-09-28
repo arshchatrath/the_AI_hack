@@ -1,50 +1,34 @@
-"use client";
+const ITEMS = [
+  "6 Innovation Tracks",
+  "₹1,75,000 Prize Pool",
+  "Global Participation Welcome",
+  "Focus on Rural & Accessibility Solutions",
+  "24+ Hour Hackathon",
+];
 
-import React from "react";
-import { motion } from "framer-motion";
-
+// Pure CSS marquee (see .marquee in globals.css): runs on the compositor
+// instead of animating from JavaScript every frame.
 export function EventHighlights() {
-  const items = [
-    "6 Innovation Tracks",
-    "₹1,75,000 Prize Pool",
-    "Global Participation Welcome",
-    "Focus on Rural & Accessibility Solutions",
-    "24+ Hour Hackathon",
-  ];
-  // Duplicate list for seamless marquee
-  const list = [...items, ...items, ...items];
-
-  const containerVariants = {
-    animate: {
-      x: [0, -1000],
-      transition: {
-        x: {
-          repeat: Infinity,
-          repeatType: "loop" as const,
-          duration: 25,
-          ease: "linear",
-        },
-      },
-    },
-  };
-
   return (
     <div className="w-full overflow-hidden border-t border-b rounded-none bg-gradient-to-r from-white via-blue-50 to-white shadow-lg py-6 px-10">
-      <motion.div
-        className="flex gap-4 whitespace-nowrap"
-        variants={containerVariants}
-        animate="animate"
-      >
-        {list.map((t, i) => (
-          <motion.span
-            key={i}
-            className="px-6 py-2 rounded-full border-2 border-blue-300 bg-gradient-to-r from-blue-50 to-cyan-50 text-blue-700 font-bold text-sm shadow-md hover:shadow-lg transition-all duration-300"
-            whileHover={{ scale: 1.05, backgroundColor: "#e0f2fe" }}
+      <div className="marquee">
+        {[0, 1, 2, 3].map((copy) => (
+          <div
+            key={copy}
+            className="flex gap-4 pr-4"
+            aria-hidden={copy > 0 || undefined}
           >
-            {t}
-          </motion.span>
+            {ITEMS.map((t) => (
+              <span
+                key={t}
+                className="px-6 py-2 rounded-full border-2 border-blue-300 bg-gradient-to-r from-blue-50 to-cyan-50 text-blue-700 font-bold text-sm shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 }

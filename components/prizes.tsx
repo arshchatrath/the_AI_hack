@@ -3,7 +3,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Trophy, Medal, Award, Gift } from "lucide-react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const prizes = [
   {
@@ -70,25 +70,25 @@ export function Prizes() {
   return (
     <div className="max-w-6xl mx-auto space-y-16">
       {/* Header */}
-      <motion.div
+      <m.div
         className="text-center space-y-3"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <motion.div className="flex justify-center mb-2">
+        <m.div className="flex justify-center mb-2">
           <div className="inline-block px-4 py-1 bg-gradient-to-r from-yellow-100 to-orange-50 rounded-full">
             <p className="text-sm font-semibold text-yellow-500">Rewards</p>
           </div>
-        </motion.div>
+        </m.div>
         <h3 className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-orange-500">
           Prize Pool
         </h3>
-      </motion.div>
+      </m.div>
 
       {/* Main Prizes */}
-      <motion.div
+      <m.div
         className="grid md:grid-cols-3 gap-6 lg:gap-8"
         variants={containerVariants}
         initial="hidden"
@@ -98,29 +98,29 @@ export function Prizes() {
         {prizes.map((prize, index) => {
           const IconComponent = prize.icon;
           return (
-            <motion.div key={index} variants={itemVariants}>
-              <motion.div
+            <m.div key={index} variants={itemVariants}>
+              <m.div
                 whileHover={{ y: -8, scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
                 <Card className={`${prize.borderColor} border-2 ${prize.bgColor} relative overflow-hidden h-full transition-all duration-300 hover:shadow-xl`}>
                   {/* Animated Background Gradient */}
-                  <motion.div
+                  <m.div
                     className={`absolute -inset-0.5 bg-gradient-to-br ${prize.gradientFrom} ${prize.gradientTo} opacity-0 blur-lg`}
                     whileHover={{ opacity: 0.15 }}
                     transition={{ duration: 0.4 }}
                   />
 
                   <CardHeader className="text-center pb-4 relative z-10">
-                    <motion.div
+                    <m.div
                       className={`mx-auto w-16 h-16 rounded-full ${prize.bgColor} border-2 ${prize.borderColor} flex items-center justify-center mb-4`}
                       whileHover={{ scale: 1.15, rotate: 5 }}
                       transition={{ duration: 0.3 }}
                     >
                       <IconComponent className={`h-8 w-8 ${prize.color}`} />
-                    </motion.div>
+                    </m.div>
                     <CardTitle className="text-xl text-gray-900">{prize.position}</CardTitle>
-                    <motion.div
+                    <m.div
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
@@ -128,18 +128,18 @@ export function Prizes() {
                       <CardDescription className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700">
                         {prize.amount}
                       </CardDescription>
-                    </motion.div>
+                    </m.div>
                     <p className="text-sm text-gray-600 mt-2">{prize.description}</p>
                   </CardHeader>
                   <CardContent className="relative z-10">
-                    <motion.ul
+                    <m.ul
                       className="space-y-3 list-disc list-inside"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
                     >
                       {prize.benefits.map((benefit, idx) => (
-                        <motion.li
+                        <m.li
                           key={idx}
                           className="text-sm text-gray-700 font-medium flex items-center gap-2"
                           initial={{ opacity: 0, x: -10 }}
@@ -147,19 +147,19 @@ export function Prizes() {
                           transition={{ delay: 0.4 + index * 0.1 + idx * 0.05, duration: 0.3 }}
                         >
                           <span>{benefit}</span>
-                        </motion.li>
+                        </m.li>
                       ))}
-                    </motion.ul>
+                    </m.ul>
                   </CardContent>
                 </Card>
-              </motion.div>
-            </motion.div>
+              </m.div>
+            </m.div>
           );
         })}
-      </motion.div>
+      </m.div>
 
       {/* Additional Benefits */}
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
@@ -167,7 +167,7 @@ export function Prizes() {
       >
         <Card className="bg-gradient-to-br from-orange-50 via-rose-50 to-pink-50 border-orange-100/70 shadow-lg hover:shadow-xl transition-all duration-300">
           <CardHeader className="text-center pb-6">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
@@ -175,10 +175,10 @@ export function Prizes() {
               <CardTitle className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-rose-500">
                 Additional Benefits for All Participants
               </CardTitle>
-            </motion.div>
+            </m.div>
           </CardHeader>
           <CardContent>
-            <motion.div
+            <m.div
               className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center"
               variants={containerVariants}
               initial="hidden"
@@ -191,7 +191,7 @@ export function Prizes() {
                 { title: "Learning", description: "Workshops and mentorship sessions" },
                 { title: "Opportunities", description: "Job and internship opportunities" }
               ].map((benefit, idx) => (
-                <motion.div
+                <m.div
                   key={idx}
                   className="space-y-2 p-4 rounded-lg bg-white/50 backdrop-blur-sm hover:bg-white/80 transition-all duration-300"
                   variants={itemVariants}
@@ -199,12 +199,12 @@ export function Prizes() {
                 >
                   <div className="text-lg font-bold text-gray-900">{benefit.title}</div>
                   <div className="text-sm text-gray-600">{benefit.description}</div>
-                </motion.div>
+                </m.div>
               ))}
-            </motion.div>
+            </m.div>
           </CardContent>
         </Card>
-      </motion.div>
+      </m.div>
     </div>
   );
 }

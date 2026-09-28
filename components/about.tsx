@@ -1,8 +1,6 @@
-"use client";
-
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, MapPin, Users, Award, Calendar } from "lucide-react";
+import { ExternalLink, Award, Calendar } from "lucide-react";
 export function About() {
 
   return (
@@ -29,7 +27,7 @@ export function About() {
               <div 
                 className="absolute inset-0 bg-cover bg-center transition-all duration-700 group-hover:scale-110 opacity-40 group-hover:opacity-60"
                 style={{
-                  backgroundImage: `linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(37, 99, 235, 0.2)), url('/thapar.png')`,
+                  backgroundImage: `linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(37, 99, 235, 0.2)), url('/thapar.webp')`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
@@ -53,15 +51,17 @@ export function About() {
                   </div>
                 </div>
 
-                <Button 
+                <Button
+                  asChild
                   className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg hover:shadow-blue-500/25 transition-all duration-500 group-hover:translate-y-[-4px] relative overflow-hidden font-semibold"
-                  onClick={() => window.open('https://www.thapar.edu', '_blank')}
                 >
-                  <span className="relative z-10 flex items-center justify-center">
-                    Learn More
-                    <ExternalLink className="ml-2 h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <a href="https://www.thapar.edu" target="_blank" rel="noopener noreferrer">
+                    <span className="relative z-10 flex items-center justify-center">
+                      Learn More
+                      <ExternalLink className="ml-2 h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  </a>
                 </Button>
               </div>
             </Card>
@@ -75,7 +75,7 @@ export function About() {
               <div 
                 className="absolute inset-0 bg-cover bg-center transition-all duration-700 group-hover:scale-110 opacity-40 group-hover:opacity-60"
                 style={{
-                  backgroundImage: `linear-gradient(135deg, rgba(6, 182, 212, 0.3), rgba(8, 145, 178, 0.2)), url('/queensland.png')`,
+                  backgroundImage: `linear-gradient(135deg, rgba(6, 182, 212, 0.3), rgba(8, 145, 178, 0.2)), url('/queensland.webp')`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
@@ -99,15 +99,17 @@ export function About() {
                   </div>
                 </div>
 
-                <Button 
+                <Button
+                  asChild
                   className="w-full bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white shadow-lg hover:shadow-emerald-500/25 transition-all duration-500 group-hover:translate-y-[-4px] relative overflow-hidden font-semibold"
-                  onClick={() => window.open('https://www.uq.edu.au', '_blank')}
                 >
-                  <span className="relative z-10 flex items-center justify-center">
-                    Learn More
-                    <ExternalLink className="ml-2 h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <a href="https://www.uq.edu.au" target="_blank" rel="noopener noreferrer">
+                    <span className="relative z-10 flex items-center justify-center">
+                      Learn More
+                      <ExternalLink className="ml-2 h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  </a>
                 </Button>
               </div>
             </Card>

@@ -21,7 +21,7 @@ import {
   ChevronRight,
   TrendingUp,
 } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
+import { m, AnimatePresence } from "framer-motion"
 
 type Item = {
   id: string
@@ -199,28 +199,28 @@ export function ProblemStatements() {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <motion.div
+      <m.div
         className="text-center max-w-3xl mx-auto mb-12 space-y-3"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <motion.div className="flex justify-center mb-2">
+        <m.div className="flex justify-center mb-2">
           <div className="inline-block px-4 py-1 bg-gradient-to-r from-[#d7f5fb] to-[#bfe9f7] rounded-full">
             <p className="text-sm font-semibold text-[var(--brand-deep)]">Problem Statements</p>
           </div>
-        </motion.div>
+        </m.div>
         <h3 className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#146b82] to-[#1b9ac5]">
           Choose Your Challenge
         </h3>
         <p className="text-gray-600 text-lg">
           Select a problem statement that aligns with your passion and expertise. Each track offers unique challenges and opportunities to create meaningful impact.
         </p>
-      </motion.div>
+      </m.div>
 
       {/* Problem Statements Grid */}
-      <motion.div
+      <m.div
         className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr"
         variants={containerVariants}
         initial="hidden"
@@ -229,13 +229,13 @@ export function ProblemStatements() {
       >
         {ITEMS.map((item, index) => (
           <React.Fragment key={item.id}>
-            <motion.div
+            <m.div
               variants={itemVariants}
               whileHover={{ y: -8 }}
               transition={{ duration: 0.3 }}
               className="h-full"
             >
-              <motion.div
+              <m.div
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
                 className="h-full"
@@ -245,7 +245,7 @@ export function ProblemStatements() {
                   onClick={() => setOpen(item.id)}
                 >
                   {/* Glow background */}
-                  <motion.div
+                  <m.div
                     className="absolute -inset-0.5 bg-gradient-to-br from-[#1ea7c5] to-[#4cc2e0] rounded-lg opacity-0 blur-xl"
                     whileHover={{ opacity: 0.15 }}
                     transition={{ duration: 0.4 }}
@@ -253,20 +253,20 @@ export function ProblemStatements() {
 
                   {/* Header */}
                   <div className="flex items-start justify-between mb-4 relative z-10">
-                    <motion.div 
+                    <m.div 
                       className="p-3 bg-gradient-to-br from-[rgba(32,184,205,0.15)] to-[rgba(88,192,224,0.15)] rounded-lg text-[#0f8db3] shadow-md"
                       whileHover={{ scale: 1.15, rotate: 5 }}
                       transition={{ duration: 0.3 }}
                     >
                       {item.icon}
-                    </motion.div>
-                    <motion.div
+                    </m.div>
+                    <m.div
                       initial={{ x: 0 }}
                       whileHover={{ x: 4 }}
                       transition={{ duration: 0.3 }}
                     >
                       <ChevronRight className="h-5 w-5 text-[#0f8db3]" />
-                    </motion.div>
+                    </m.div>
                   </div>
 
                   {/* Content */}
@@ -279,7 +279,7 @@ export function ProblemStatements() {
                     {/* Tags */}
                     <div className="flex flex-wrap gap-2">
                       {item.tags.slice(0, 3).map((tag) => (
-                        <motion.div
+                        <m.div
                           key={tag}
                           initial={{ opacity: 0, scale: 0.8 }}
                           whileInView={{ opacity: 1, scale: 1 }}
@@ -291,7 +291,7 @@ export function ProblemStatements() {
                           >
                             {tag}
                           </Badge>
-                        </motion.div>
+                        </m.div>
                       ))}
                       {item.tags.length > 3 && (
                         <Badge 
@@ -304,14 +304,14 @@ export function ProblemStatements() {
                     </div>
                   </div>
                 </Card>
-              </motion.div>
-            </motion.div>
+              </m.div>
+            </m.div>
 
             <AnimatePresence>
               {open === item.id && (
                 <Dialog open={open === item.id} onOpenChange={(isOpen) => !isOpen && setOpen(null)}>
                   <DialogContent className="max-h-[80vh] overflow-y-auto backdrop-blur-md bg-gradient-to-br from-white/95 to-[rgba(32,184,205,0.05)] shadow-xl border-[rgba(32,184,205,0.35)]">
-                    <motion.div
+                    <m.div
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 20 }}
@@ -319,19 +319,19 @@ export function ProblemStatements() {
                     >
                       <DialogHeader>
                         <div className="flex items-center gap-3 mb-4">
-                          <motion.div 
+                          <m.div 
                             className="p-3 bg-gradient-to-br from-[rgba(32,184,205,0.15)] to-[rgba(88,192,224,0.15)] rounded-lg text-[#0f8db3] shadow-md"
                             whileHover={{ scale: 1.1 }}
                           >
                             {item.icon}
-                          </motion.div>
+                          </m.div>
                           <DialogTitle className="text-2xl font-bold text-gray-900">{item.title}</DialogTitle>
                         </div>
                         <DialogDescription className="text-gray-700 text-base leading-relaxed">{item.detailedDesc}</DialogDescription>
                       </DialogHeader>
 
                       <div className="space-y-6 mt-6">
-                        <motion.div
+                        <m.div
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: 0.1 }}
@@ -339,7 +339,7 @@ export function ProblemStatements() {
                           <h4 className="font-bold text-base mb-3 text-gray-900">Key Features:</h4>
                           <ul className="text-sm text-gray-700 space-y-2">
                             {item.features.map((feature, idx) => (
-                              <motion.li
+                              <m.li
                                 key={idx}
                                 className="flex items-start gap-3 p-2 rounded hover:bg-[rgba(32,184,205,0.08)] transition-colors"
                                 initial={{ opacity: 0, x: -10 }}
@@ -348,12 +348,12 @@ export function ProblemStatements() {
                               >
                                 <span className="text-[#0f8db3] font-bold mt-0.5">•</span>
                                 <span>{feature}</span>
-                              </motion.li>
+                              </m.li>
                             ))}
                           </ul>
-                        </motion.div>
+                        </m.div>
 
-                        <motion.div
+                        <m.div
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: 0.2 }}
@@ -361,7 +361,7 @@ export function ProblemStatements() {
                           <h4 className="font-bold text-base mb-3 text-gray-900">Example Solutions:</h4>
                           <ul className="text-sm text-gray-700 space-y-2">
                             {item.examples.map((example, idx) => (
-                              <motion.li
+                              <m.li
                                 key={idx}
                                 className="flex items-start gap-3 p-2 rounded hover:bg-[rgba(32,184,205,0.08)] transition-colors"
                                 initial={{ opacity: 0, x: -10 }}
@@ -370,12 +370,12 @@ export function ProblemStatements() {
                               >
                                 <span className="text-[#0f8db3] font-bold mt-0.5">✓</span>
                                 <span>{example}</span>
-                              </motion.li>
+                              </m.li>
                             ))}
                           </ul>
-                        </motion.div>
+                        </m.div>
 
-                        <motion.div
+                        <m.div
                           className="flex items-center gap-3 p-4 bg-gradient-to-r from-[rgba(32,184,205,0.12)] to-[rgba(88,192,224,0.12)] rounded-lg border border-[rgba(32,184,205,0.35)] shadow-sm"
                           initial={{ opacity: 0, scale: 0.95 }}
                           animate={{ opacity: 1, scale: 1 }}
@@ -383,16 +383,16 @@ export function ProblemStatements() {
                         >
                           <TrendingUp className="h-5 w-5 text-[#0f8db3] flex-shrink-0" />
                           <span className="text-sm font-semibold text-[var(--brand-deep)]">Impact: <span className="font-bold">{item.impact}</span></span>
-                        </motion.div>
+                        </m.div>
 
-                        <motion.div
+                        <m.div
                           className="flex flex-wrap gap-2 pt-2"
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           transition={{ delay: 0.35 }}
                         >
                           {item.tags.map((tag, idx) => (
-                            <motion.div
+                            <m.div
                               key={tag}
                               initial={{ opacity: 0, scale: 0.8 }}
                               animate={{ opacity: 1, scale: 1 }}
@@ -404,18 +404,18 @@ export function ProblemStatements() {
                               >
                                 {tag}
                               </Badge>
-                            </motion.div>
+                            </m.div>
                           ))}
-                        </motion.div>
+                        </m.div>
                       </div>
-                    </motion.div>
+                    </m.div>
                   </DialogContent>
                 </Dialog>
               )}
             </AnimatePresence>
           </React.Fragment>
         ))}
-      </motion.div>      
+      </m.div>      
     </div>
   )
 }

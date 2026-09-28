@@ -13,7 +13,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { motion, AnimatePresence } from "framer-motion";
+import { m } from "framer-motion";
 
 const INDIA_EVENTS = [
   {
@@ -100,7 +100,7 @@ export function Timeline() {
   return (
     <div className="space-y-8">
       {/* Track Selector */}
-      <motion.div
+      <m.div
         className="flex flex-col items-center gap-6"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -108,11 +108,11 @@ export function Timeline() {
         transition={{ duration: 0.6 }}
       >
         <div className="text-center space-y-3">
-          <motion.div className="flex justify-center mb-2">
+          <m.div className="flex justify-center mb-2">
             <div className="inline-block px-4 py-1 bg-gradient-to-r from-teal-100 to-emerald-100 rounded-full">
               <p className="text-sm font-semibold text-teal-700">Timeline</p>
             </div>
-          </motion.div>
+          </m.div>
           <h3 className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-emerald-600">
             Event Timeline
           </h3>
@@ -121,14 +121,14 @@ export function Timeline() {
           </p>
         </div>
 
-        <motion.div
+        <m.div
           className="flex gap-4 flex-wrap justify-center"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <motion.div variants={itemVariants}>
+          <m.div variants={itemVariants}>
             <Button
               variant={selectedTrack === "india" ? "default" : "outline"}
               onClick={() => setSelectedTrack("india")}
@@ -137,8 +137,8 @@ export function Timeline() {
               <MapPin className="h-4 w-4" />
               India (TIET)
             </Button>
-          </motion.div>
-          <motion.div variants={itemVariants}>
+          </m.div>
+          <m.div variants={itemVariants}>
             <Button
               variant={selectedTrack === "uq" ? "default" : "outline"}
               onClick={() => setSelectedTrack("uq")}
@@ -147,12 +147,12 @@ export function Timeline() {
               <Globe className="h-4 w-4" />
               Australia (UQ)
             </Button>
-          </motion.div>
-        </motion.div>
-      </motion.div>
+          </m.div>
+        </m.div>
+      </m.div>
 
       {/* Timeline Display */}
-      <motion.div
+      <m.div
         className="max-w-4xl mx-auto"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -161,7 +161,7 @@ export function Timeline() {
       >
         <Card className="border-teal-200/80 bg-gradient-to-br from-white to-teal-50/50 shadow-lg hover:shadow-xl transition-all duration-300">
           <CardHeader>
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -180,11 +180,11 @@ export function Timeline() {
                   </>
                 )}
               </CardTitle>
-            </motion.div>
+            </m.div>
           </CardHeader>
           <CardContent>
             <div className="overflow-x-auto pb-4">
-              <motion.div
+              <m.div
                 className="flex gap-8 min-w-max"
                 variants={containerVariants}
                 initial="hidden"
@@ -196,14 +196,14 @@ export function Timeline() {
                   const isCurrent = index === 3;
 
                   return (
-                    <motion.div
+                    <m.div
                       key={index}
                       className="relative flex flex-col items-center min-w-[200px]"
                       variants={itemVariants}
                     >
                       {/* Timeline Line */}
                       {index < currentEvents.length - 1 && (
-                        <motion.div
+                        <m.div
                           className="absolute top-6 left-[calc(100%-16px)] w-8 h-0.5 bg-gradient-to-r from-teal-300 to-emerald-300 z-0"
                           initial={{ scaleX: 0 }}
                           whileInView={{ scaleX: 1 }}
@@ -213,7 +213,7 @@ export function Timeline() {
                       )}
 
                       {/* Icon */}
-                      <motion.div
+                      <m.div
                         className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center border-2 z-10 transition-all duration-300 ${
                           isCompleted
                             ? "bg-green-100 border-green-500 text-green-600"
@@ -225,10 +225,10 @@ export function Timeline() {
                         transition={{ duration: 0.3 }}
                       >
                         <IconComponent className="h-5 w-5" />
-                      </motion.div>
+                      </m.div>
 
                       {/* Content */}
-                      <motion.div
+                      <m.div
                         className="text-center mt-4 max-w-[180px]"
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -250,15 +250,15 @@ export function Timeline() {
                         <p className="text-gray-600 text-xs leading-relaxed">
                           {event.description}
                         </p>
-                      </motion.div>
-                    </motion.div>
+                      </m.div>
+                    </m.div>
                   );
                 })}
-              </motion.div>
+              </m.div>
             </div>
           </CardContent>
         </Card>
-      </motion.div>
+      </m.div>
     </div>
   );
 }

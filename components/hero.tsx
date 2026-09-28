@@ -1,33 +1,23 @@
-"use client";
-
-import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { HACKATHON_CONFIG } from "@/lib/config";
 import { CircuitBackground } from "./circuit-background";
+import { ScrollToTopOnLoad } from "./scroll-to-top-on-load";
 
 export function Hero() {
-  useEffect(() => {
-    // Ensure page starts at top on initial load/reload (not when navigating to #home)
-    if (window.location.hash === "" || window.location.hash === "#home") {
-      // Use requestAnimationFrame to ensure DOM is ready
-      requestAnimationFrame(() => {
-        window.scrollTo({ top: 0, behavior: 'instant' });
-      });
-    }
-  }, []);
-
   return (
     <section id="home" className="relative isolate bg-background py-0 scroll-mt-16 md:scroll-mt-20">
+      <ScrollToTopOnLoad />
       <CircuitBackground />
       <div className="container mx-auto px-4 pt-4 md:pt-6">
         {/* AI Mission Logo - Top on mobile, right on desktop */}
         <div className="mb-2 lg:hidden flex justify-center">
           <img
-            src="/Ai mission logo.PNG"
+            src="/ai-mission-logo.webp"
             alt="AI Mission Logo"
+            width={896}
+            height={504}
+            fetchPriority="high"
             className="h-34 md:h-40 w-auto object-contain"
-            onError={(e) => {
-              e.currentTarget.style.display = "none";
-            }}
           />
         </div>
 
@@ -75,22 +65,23 @@ export function Hero() {
               {/* Action Buttons */}
               <div className="mt-6 flex flex-col sm:flex-row gap-4">
                 <Button
+                  asChild
                   className="bg-[#00BFA5] hover:bg-[#00A895] text-white px-8 py-6 text-lg font-semibold rounded-lg transition-all duration-200"
-                  onClick={() => window.open('https://innovation-challenge-2026.devpost.com/', '_blank')}
                 >
-                  Register Now
+                  <a
+                    href={HACKATHON_CONFIG.GOOGLE_FORM_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Register Now
+                  </a>
                 </Button>
                 <Button
+                  asChild
                   variant="outline"
                   className="text-base px-6 py-6 rounded-lg border-muted-foreground/30"
-                  onClick={() => {
-                    const guidelinesSection = document.getElementById('guidelines');
-                    if (guidelinesSection) {
-                      guidelinesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                  }}
                 >
-                  View Guidelines
+                  <a href="#guidelines">View Guidelines</a>
                 </Button>
               </div>
             </div>
@@ -101,12 +92,12 @@ export function Hero() {
             {/* AI Mission Logo - Desktop only */}
             <div className="hidden lg:block mb-8 -mt-4 flex justify-end">
               <img
-                src="/Ai mission logo.PNG"
+                src="/ai-mission-logo.webp"
                 alt="AI Mission Logo"
+                width={896}
+                height={504}
+                fetchPriority="high"
                 className="h-42 w-auto object-contain"
-                onError={(e) => {
-                  e.currentTarget.style.display = "none";
-                }}
               />
             </div>
 

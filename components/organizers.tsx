@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/ui/card";
 import { Linkedin } from "lucide-react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 interface Organizer {
   id: string;
@@ -18,7 +18,7 @@ const organizers: Organizer[] = [
     id: "1",
     name: "Dr. Inderveer Chana",
     role: "Center Director",
-    image: "/dr_channaM.png",
+    image: "/dr_channaM.webp",
     institution: "Professor, TIET",
     linkedin: ""
   },
@@ -26,7 +26,7 @@ const organizers: Organizer[] = [
     id: "2",
     name: "Dr. Tim Miller",
     role: "Center Director",
-    image: "/tim.png",
+    image: "/tim.webp",
     institution: "Professor, University of Queensland",
     linkedin: ""
   },
@@ -34,7 +34,7 @@ const organizers: Organizer[] = [
     id: "3",
     name: "Dr. Maninder Singh",
     role: "",
-    image: "/manminder (2).jpg",
+    image: "/manminder-2.webp",
     institution: "Chief Technological Officer, TIET",
     linkedin: ""
   },
@@ -42,7 +42,7 @@ const organizers: Organizer[] = [
     id: "4",
     name: "Dr. Anju Bala",
     role: "Education and Training Coordinator",
-    image: "/anju_bala_mam.png",
+    image: "/anju_bala_mam.webp",
     institution: "Professor and Associate Head, TIET",
     linkedin: ""
   },
@@ -50,7 +50,7 @@ const organizers: Organizer[] = [
     id: "5",
     name: "Dr. Sachin Kansal",
     role: "Research and Innovation Coordinator",
-    image: "/sachin_sir.jpg",
+    image: "/sachin_sir.webp",
     institution: "Associate Professor, TIET",
     linkedin: ""
   },
@@ -58,7 +58,7 @@ const organizers: Organizer[] = [
     id: "6",
     name: "Dr. Harpreet Singh",
     role: "",
-    image: "/harpreet_sir.jpeg",
+    image: "/harpreet_sir.webp",
     institution: "Assistant Professor, TIET",
     linkedin: ""
   },
@@ -66,7 +66,7 @@ const organizers: Organizer[] = [
     id: "7",
     name: "Dr. Amrita Kaur",
     role: "",
-    image: "/harpreet_mam.jpg",
+    image: "/harpreet_mam.webp",
     institution: "Assistant Professor, TIET",
     linkedin: ""
   },
@@ -74,7 +74,7 @@ const organizers: Organizer[] = [
     id: "8",
     name: "Dr. Maggi Bansal",
     role: "",
-    image: "/maggi.jpeg",
+    image: "/maggi.webp",
     institution: "Assistant Professor, TIET",
     linkedin: ""
   },
@@ -85,7 +85,7 @@ const studentCoordinators: Organizer[] = [
     id: "sc9",
     name: "Ishpuneet Singh",
     role: "Expert Mentor",
-    image: "/ips.png",
+    image: "/ips.webp",
     institution: "",
     linkedin: "https://www.linkedin.com/in/ips610/"
   },
@@ -93,7 +93,7 @@ const studentCoordinators: Organizer[] = [
     id: "sc1",
     name: "Armaan Jagirdar",
     role: "Overall Technical Coordinator",
-    image: "/armaan.png",
+    image: "/armaan.webp",
     institution: "",
     linkedin: "https://www.linkedin.com/in/armaan-jagirdar-183b47285/"
   },
@@ -101,7 +101,7 @@ const studentCoordinators: Organizer[] = [
     id: "sc2",
     name: "Harsimran Singh",
     role: "Overall Hackathon   Coordinator",
-    image: "/harsimran.png",
+    image: "/harsimran.webp",
     institution: "",
     linkedin: "https://www.linkedin.com/in/harsimran-singh-dalal-614a39286/"
   },
@@ -109,7 +109,7 @@ const studentCoordinators: Organizer[] = [
     id: "sc3",
     name: "Lakshya Manchanda",
     role: "Overall Marketing Coordinator",
-    image: "/lakshya.png",
+    image: "/lakshya.webp",
     institution: "",
     linkedin: "https://www.linkedin.com/in/lakshyamanchanda/"
   },
@@ -117,7 +117,7 @@ const studentCoordinators: Organizer[] = [
     id: "sc4",
     name: "Nakul Sharma",
     role: "Overall Hackathon Coordinator",
-    image: "/nakul.png",
+    image: "/nakul.webp",
     institution: "",
     linkedin: "https://www.linkedin.com/in/nakulsharma20/"
   },
@@ -125,7 +125,7 @@ const studentCoordinators: Organizer[] = [
     id: "sc5",
     name: "Nityam",
     role: "Overall Technical Coordinator",
-    image: "/nityam.png",
+    image: "/nityam.webp",
     institution: "",
     linkedin: "https://www.linkedin.com/in/nityamt19/"
   },
@@ -133,7 +133,7 @@ const studentCoordinators: Organizer[] = [
     id: "sc6",
     name: "Tamanna Bhardwaj",
     role: "Overall Design Coordinator",
-    image: "/tamanna.png",
+    image: "/tamanna.webp",
     institution: "",
     linkedin: "https://www.linkedin.com/in/tamanna-bhardwaj-96429b230/"
   },
@@ -141,7 +141,7 @@ const studentCoordinators: Organizer[] = [
     id: "sc7",
     name: "Ikansh Mahajan",
     role: "Overall Design Coordinator",
-    image: "/ikansh.png",
+    image: "/ikansh.webp",
     institution: "",
     linkedin: "https://www.linkedin.com/in/ikabrain/"
   },
@@ -149,7 +149,7 @@ const studentCoordinators: Organizer[] = [
     id: "sc8",
     name: "Sparsh Aggarwal",
     role: "Overall Design Coordinator",
-    image: "/sparsh.png",
+    image: "/sparsh.webp",
     institution: "",
     linkedin: "https://www.linkedin.com/in/sparshagarwal080/"
   },
@@ -157,7 +157,7 @@ const studentCoordinators: Organizer[] = [
     id: "sc10",
     name: "Disha Garg",
     role: "Overall Workshop Coordinator",
-    image: "/disha.png",
+    image: "/disha.webp",
     institution: "",
     linkedin: "https://www.linkedin.com/in/disha-garg-96550722a/"
   },
@@ -165,7 +165,7 @@ const studentCoordinators: Organizer[] = [
     id: "sc11",
     name: "Sonali Gupta",
     role: "Overall Workshop Coordinator",
-    image: "/sonali.png",
+    image: "/sonali.webp",
     institution: "",
     linkedin: "https://www.linkedin.com/in/sonali-gupta-1b7756260/"
   },
@@ -173,7 +173,7 @@ const studentCoordinators: Organizer[] = [
     id: "sc12",
     name: "Aviral Bhargava",
     role: "Overall Media Coordinator",
-    image: "/aviral.png",
+    image: "/aviral.webp",
     institution: "",
     linkedin: "https://www.linkedin.com/in/aviral-bhargava-84899a29a/"
   },
@@ -181,7 +181,7 @@ const studentCoordinators: Organizer[] = [
     id: "sc13",
     name: "Ishaan Jindal",
     role: "Overall Setup Coordinator",
-    image: "/ishaan.png",
+    image: "/ishaan.webp",
     institution: "",
     linkedin: "https://www.linkedin.com/in/dir-ishaan-jindal-804596284/"
   }
@@ -272,15 +272,15 @@ function PersonCard({ person, isSpeaker = false }: { person: Organizer; isSpeake
   const linkedinBg = 'bg-blue-600 hover:bg-blue-700';
 
   return (
-    <motion.div
+    <m.div
       variants={itemVariants}
       className="h-full"
       whileHover="hover"
       initial="initial"
     >
-      <motion.div className="relative h-full group" variants={cardVariants}>
+      <m.div className="relative h-full group" variants={cardVariants}>
         {/* Glow background */}
-        <motion.div
+        <m.div
           className={`absolute -inset-1 rounded-xl opacity-0 blur-xl ${glowBg}`}
           variants={glowVariants}
         />
@@ -288,12 +288,16 @@ function PersonCard({ person, isSpeaker = false }: { person: Organizer; isSpeake
         {/* Card */}
         <Card className={`relative h-full p-5 text-center backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-300 ${cardBg}`}>
           {/* Image container */}
-          <motion.div className="mb-0 flex justify-center" variants={imageVariants}>
+          <m.div className="mb-0 flex justify-center" variants={imageVariants}>
             <div className="relative">
               <div className={`absolute -inset-1 rounded-full blur-sm opacity-60 ${imageBg}`} />
               <img
                 src={person.image}
                 alt={person.name}
+                width={128}
+                height={128}
+                loading="lazy"
+                decoding="async"
                 className="relative w-32 h-32 rounded-full mx-auto object-cover border-4 border-white shadow-lg"
                 onError={(e) => {
                   e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(
@@ -302,26 +306,26 @@ function PersonCard({ person, isSpeaker = false }: { person: Organizer; isSpeake
                 }}
               />
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Content */}
           <div className="space-y-2 flex flex-col flex-grow">
-            <motion.h4
+            <m.h4
               className="font-bold text-lg leading-tight text-gray-900 whitespace-normal break-words"
               initial={{ opacity: 0.8 }}
               whileHover={{ opacity: 1, color: nameHover }}
             >
               {person.name}
-            </motion.h4>
+            </m.h4>
 
             {person.role && (
-              <motion.p
+              <m.p
                 className={`text-sm font-semibold whitespace-normal break-words leading-snug ${roleText}`}
                 initial={{ opacity: 0.8 }}
                 whileHover={{ opacity: 1 }}
               >
                 {person.role}
-              </motion.p>
+              </m.p>
             )}
 
             {hasInstitution && (
@@ -332,7 +336,7 @@ function PersonCard({ person, isSpeaker = false }: { person: Organizer; isSpeake
 
             {/* LinkedIn Button for organizers and speakers */}
             {showLinkedIn && (
-              <motion.div
+              <m.div
                 className={`pt-2 flex justify-center ${(!isStudentCoordinator && hasInstitution) ? 'mt-auto' : ''}`}
                 initial={{ opacity: 0.7, scale: 0.9 }}
                 whileHover={{ opacity: 1, scale: 1.05 }}
@@ -347,12 +351,12 @@ function PersonCard({ person, isSpeaker = false }: { person: Organizer; isSpeake
                   <Linkedin className="h-4 w-4 text-white" />
                   <span className="text-xs font-medium text-white">LinkedIn</span>
                 </a>
-              </motion.div>
+              </m.div>
             )}
           </div>
         </Card>
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   );
 }
 
@@ -360,19 +364,19 @@ export function Organizers() {
   return (
     <div className="space-y-12 py-4">
       {/* Organizers Section */}
-      <motion.div
+      <m.div
         className="space-y-6"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={containerVariants}
       >
-        <motion.div className="text-center space-y-2" variants={itemVariants}>
-          <motion.div className="flex justify-center mb-1">
+        <m.div className="text-center space-y-2" variants={itemVariants}>
+          <m.div className="flex justify-center mb-1">
             <div className="inline-block px-4 py-1 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-full">
               <p className="text-sm font-semibold text-blue-600">Leadership Team</p>
             </div>
-          </motion.div>
+          </m.div>
           <h3 className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-600">
             Meet Our Organizers
           </h3>
@@ -380,9 +384,9 @@ export function Organizers() {
             Our dedicated team of faculty and staff from both institutions working
             together to make this event a success.
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           className="flex flex-wrap justify-center gap-5 sm:gap-6"
           variants={containerVariants}
         >
@@ -391,33 +395,33 @@ export function Organizers() {
               <PersonCard person={organizer} isSpeaker={false} />
             </div>
           ))}
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
 
       {/* Judges Section removed as per request */}
 
-      <motion.div
+      <m.div
         className="space-y-6"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={containerVariants}
       >
-        <motion.div className="text-center space-y-2" variants={itemVariants}>
-          <motion.div className="flex justify-center mb-1">
+        <m.div className="text-center space-y-2" variants={itemVariants}>
+          <m.div className="flex justify-center mb-1">
             <div className="inline-block px-4 py-1 bg-gradient-to-r from-green-100 to-emerald-100 rounded-full">
               <p className="text-sm font-semibold text-green-600">Student Team</p>
             </div>
-          </motion.div>
+          </m.div>
           <h3 className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600">
             Student Organizers
           </h3>
           <p className="text-gray-600 max-w-2xl mx-auto text-base">
             Our enthusiastic student team working tirelessly to ensure a smooth and engaging hackathon experience.
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           className="flex flex-wrap justify-center gap-5 sm:gap-6"
           variants={containerVariants}
         >
@@ -426,8 +430,8 @@ export function Organizers() {
               <PersonCard person={coordinator} isSpeaker={false} />
             </div>
           ))}
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
     </div>
   );
 }

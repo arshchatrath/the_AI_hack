@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/ui/card";
 import { Linkedin } from "lucide-react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 interface PanelSpeaker {
   id: string;
@@ -35,14 +35,14 @@ const aiScleratePanels: Panel[] = [
         id: "ps1",
         name: "Dr Chandrasekhar Buddha",
         institution: "CEO of Anuvadini AI , Ministry of Education and CCO at AICTE, Ministry of Education.",
-        image: "/speaker4.png",
+        image: "/speaker4.webp",
         linkedin: "https://www.linkedin.com/in/chandrasekharbudha/"
       },
       {
         id: "ps3",
         name: "Rahul Bhargava",
         institution: "Founder and Managing Director of R Dot Ventures, Shekunj.com, and OctaHire.com. 8 times TEDX speaker.",
-        image: "/speaker1.png",
+        image: "/speaker1.webp",
         linkedin: "https://www.linkedin.com/in/rahuldotbhargava/"
       }
     ]
@@ -59,21 +59,21 @@ const aiScleratePanels: Panel[] = [
         id: "ps4",
         name: "Richa Marwah",
 institution: "Co-Founder, Bharat Digital; Team Lead, Ministry of Rural Development (Govt. of India); 13+ years in public digital systems.",
-        image: "/speaker6.png",
+        image: "/speaker6.webp",
         linkedin: "https://www.linkedin.com/in/richa-marwah-30a874157/"
       },
       {
         id: "ps5",
         name: "Vinay Pratap Singh",
         institution: "Senior Consultant at Microsoft. Technical Lead with over 14+ years of experience working on Cognitive Services & Azure Cloud.",
-        image: "/speaker3.png",
+        image: "/speaker3.webp",
         linkedin: "https://www.linkedin.com/in/vinay-pratap-singh-bhadauria/"
       },
       {
         id: "ps6",
         name: "Saket Kumar",
         institution: "Security Software Engineer at Microsoft with 15+ years of experience, working on Agentic AI and Generative AI",
-        image: "/speaker2.png",
+        image: "/speaker2.webp",
         linkedin: "https://www.linkedin.com/in/saketkumar05/"
       }
     ]
@@ -137,15 +137,15 @@ const glowVariants = {
 
 function PanelSpeakerCard({ speaker }: { speaker: PanelSpeaker }) {
   return (
-    <motion.div
+    <m.div
       variants={itemVariants}
       className="h-full"
       whileHover="hover"
       initial="initial"
     >
-      <motion.div className="relative h-full group" variants={cardVariants}>
+      <m.div className="relative h-full group" variants={cardVariants}>
         {/* Glow background */}
-        <motion.div
+        <m.div
           className="absolute -inset-1 rounded-xl opacity-0 blur-xl bg-gradient-to-br from-teal-300 via-teal-200 to-teal-400"
           variants={glowVariants}
         />
@@ -153,12 +153,16 @@ function PanelSpeakerCard({ speaker }: { speaker: PanelSpeaker }) {
         {/* Card */}
         <Card className="relative h-full p-5 text-center backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-white/90 to-teal-50/80 border-teal-200/60">
           {/* Image container */}
-          <motion.div className="mb-0 flex justify-center" variants={imageVariants}>
+          <m.div className="mb-0 flex justify-center" variants={imageVariants}>
             <div className="relative">
               <div className="absolute -inset-1 rounded-full blur-sm opacity-60 bg-gradient-to-r from-teal-300 to-teal-200" />
               <img
                 src={speaker.image}
                 alt={speaker.name}
+                width={128}
+                height={128}
+                loading="lazy"
+                decoding="async"
                 className="relative w-32 h-32 rounded-full mx-auto object-cover border-4 border-white shadow-lg"
                 onError={(e) => {
                   e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(
@@ -167,17 +171,17 @@ function PanelSpeakerCard({ speaker }: { speaker: PanelSpeaker }) {
                 }}
               />
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Content */}
           <div className="space-y-2 flex flex-col flex-grow">
-            <motion.h4
+            <m.h4
               className="font-bold text-lg leading-tight text-gray-900 whitespace-normal break-words"
               initial={{ opacity: 0.8 }}
               whileHover={{ opacity: 1, color: '#0d9488' }}
             >
               {speaker.name}
-            </motion.h4>
+            </m.h4>
 
 
             <p className="text-sm text-gray-600 whitespace-normal break-words leading-relaxed mt-1 flex-grow">
@@ -185,7 +189,7 @@ function PanelSpeakerCard({ speaker }: { speaker: PanelSpeaker }) {
             </p>
 
             {speaker.linkedin && (
-              <motion.div
+              <m.div
                 className="flex justify-center mt-auto"
                 initial={{ opacity: 0.7, scale: 0.95 }}
                 whileHover={{ opacity: 1, scale: 1.05 }}
@@ -200,43 +204,43 @@ function PanelSpeakerCard({ speaker }: { speaker: PanelSpeaker }) {
                   <Linkedin className="h-4 w-4 text-white" />
                   <span className="text-xs font-medium">LinkedIn</span>
                 </a>
-              </motion.div>
+              </m.div>
             )}
           </div>
         </Card>
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   );
 }
 
 export function AiScleratePanel() {
   return (
     <div className="space-y-12 py-4">
-      <motion.div
+      <m.div
         className="space-y-6"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={containerVariants}
       >
-        <motion.div className="text-center space-y-2" variants={itemVariants}>
-          <motion.div className="flex justify-center mb-1">
+        <m.div className="text-center space-y-2" variants={itemVariants}>
+          <m.div className="flex justify-center mb-1">
             <div className="inline-block px-4 py-1 bg-gradient-to-r from-teal-50 to-cyan-50 rounded-full border border-teal-100/60">
               <p className="text-sm font-semibold text-teal-700">Panel Discussion</p>
             </div>
-          </motion.div>
+          </m.div>
           <h3 className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-cyan-500">
             AI-xclerate: Expert Panel Discussion
           </h3>
           <p className="text-gray-600 max-w-2xl mx-auto text-base">
             Join industry experts as they discuss cutting-edge AI topics and insights in transformative sessions.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Panels Container */}
         <div className="space-y-12">
           {aiScleratePanels.map((panel) => (
-            <motion.div
+            <m.div
               key={panel.id}
               className="space-y-4"
               variants={itemVariants}
@@ -265,19 +269,19 @@ export function AiScleratePanel() {
                 </div>
 
                 {/* Panel Speakers */}
-                <motion.div
+                <m.div
                   className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
                   variants={containerVariants}
                 >
                   {panel.speakers.map((speaker) => (
                     <PanelSpeakerCard key={speaker.id} speaker={speaker} />
                   ))}
-                </motion.div>
+                </m.div>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
-      </motion.div>
+      </m.div>
     </div>
   );
 }

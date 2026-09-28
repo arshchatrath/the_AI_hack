@@ -17,37 +17,37 @@ const ORGS: Person[] = [
   {
     name: "Dr. Inderveer Chana",
     title: "Center Director | Professor and Associate Head",
-    img: "/dr_channaM.png",
+    img: "/dr_channaM.webp",
   },
   {
     name: "Dr. Tim Miller",
     title: "Center Director | Professor",
 
-    img: "/tim.png",
+    img: "/tim.webp",
   },
   {
     name: "Dr. Maninder Singh",
     title: "Professor",
 
-    img: "/manminder (2).jpg",
+    img: "/manminder-2.webp",
   },
   {
     name: "Dr. Anju Bala",
     title: "Education and Training Coordinator | Associate Professor",
 
-    img: "/anju_bala_mam.png",
+    img: "/anju_bala_mam.webp",
   },
   {
     name: "Dr. Sachin Kansal",
     title: "Research and Innovation Coordinator | Assistant Professor",
 
-    img: "/sachin_sir.jpg",
+    img: "/sachin_sir.webp",
   },
   {
     name: "Dr. Harpreet Singh",
     title: "Assistant Professor",
 
-    img: "/harpreet_sir.jpeg",
+    img: "/harpreet_sir.webp",
   },
 
   {
@@ -61,7 +61,7 @@ const ORGS: Person[] = [
     name: "Dr. Maggi Bansal",
     title: "Community Lead",
 
-    img: "/maggi.jpeg",
+    img: "/maggi.webp",
   },
 ];
 
@@ -70,49 +70,49 @@ const JUDGES: Person[] = [
     name: "Dr ",
     title: "Lead Organizer",
     org: "Inclusive AI Lab",
-    img: "/anju_bala_mam.png",
+    img: "/anju_bala_mam.webp",
     tags: ["Diversity", "Outreach"],
   },
   {
     name: "Rahul Verma",
     title: "Co-Organizer",
     org: "Tech4Good",
-    img: "/dr_channaM.png",
+    img: "/dr_channaM.webp",
     tags: ["Operations"],
   },
   {
     name: "Li Wei",
     title: "Program Manager",
     org: "Global AI Network",
-    img: "/harpreet_mam.png",
+    img: "/harpreet_mam.webp",
     tags: ["Logistics"],
   },
   {
     name: "Sara Khan",
     title: "Community Lead",
     org: "Open Education",
-    img: "/harpreet_sir.png",
+    img: "/harpreet_sir.webp",
     tags: ["Community"],
   },
   {
     name: "Sara Khan",
     title: "Community Lead",
     org: "Open Education",
-    img: "/maggi.png",
+    img: "/maggi.webp",
     tags: ["Community"],
   },
   {
     name: "Sara Khan",
     title: "Community Lead",
     org: "Open Education",
-    img: "/sachin_sir.png",
+    img: "/sachin_sir.webp",
     tags: ["Community"],
   },
   {
     name: "Sara Khan",
     title: "Community Lead",
     org: "Open Education",
-    img: "/tim.png",
+    img: "/tim.webp",
     tags: ["Community"],
   },
 ];

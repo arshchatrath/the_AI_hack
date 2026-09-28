@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const LINKS = [
   { href: "#problems", label: "Problem Statements" },

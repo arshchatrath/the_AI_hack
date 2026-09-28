@@ -1,5 +1,3 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -13,16 +11,6 @@ import { ExternalLink, Users, Calendar, Trophy } from "lucide-react";
 import { HACKATHON_CONFIG } from "@/lib/config";
 
 export function RegistrationForm() {
-  const handleRegistration = () => {
-    if (HACKATHON_CONFIG.GOOGLE_FORM_URL) {
-      window.open(HACKATHON_CONFIG.GOOGLE_FORM_URL, "_blank");
-    } else {
-      alert(
-        "Registration will open soon! Please check back later for the Devpost link."
-      );
-    }
-  };
-
   return (
     <div className="max-w-4xl mx-auto">
       <div className="grid md:grid-cols-2 gap-8">
@@ -51,11 +39,17 @@ export function RegistrationForm() {
             </div>
 
             <Button
-              onClick={handleRegistration}
+              asChild
               className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-blue-600 hover:to-cyan-600 text-lg py-6"
             >
-              Register via Devpost
-              <ExternalLink className="ml-2 h-4 w-4" />
+              <a
+                href={HACKATHON_CONFIG.GOOGLE_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Register via Devpost
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
             </Button>
           </CardContent>
         </Card>
